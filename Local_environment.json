@@ -1,0 +1,187 @@
+{
+	"id": "12ba5c17-b87e-4167-a825-ff271ff37b1a",
+	"name": "Local",
+	"values": [
+		{
+			"key": "writerContext",
+			"value": "https://writerinteg.localzoho.com/writer/api/v1",
+			"enabled": true
+		},
+		{
+			"key": "document_id",
+			"value": "tmtbca766bdab069949019280efcd835b02e9",
+			"enabled": true
+		},
+		{
+			"key": "doc_Id_ToDel",
+			"value": "f1nbj7e3c53b9f2a14c01acf41595bc9e7ef1",
+			"enabled": true
+		},
+		{
+			"key": "doc_WebURL",
+			"value": "https://calibre-ebook.com/downloads/demos/demo.docx",
+			"enabled": true
+		},
+		{
+			"key": "wordPress_Site_ID",
+			"value": "167861443",
+			"enabled": true
+		},
+		{
+			"key": "wordPress_AC_ID",
+			"value": "173167990",
+			"enabled": true
+		},
+		{
+			"key": "Authorization",
+			"value": "Zoho-oauthtoken 1000.86852b68eced75580e4f278801a8ae11.251b2551c0e68e5c5222bcc512882ba0",
+			"enabled": true
+		},
+		{
+			"key": "folder_id",
+			"value": "t9zwm1549e6a03c8446ec95b602a0a2e6fa14",
+			"enabled": true
+		},
+		{
+			"key": "blogger_AC_ID",
+			"value": "11106584308980063050",
+			"enabled": true
+		},
+		{
+			"key": "blogger_blog_id",
+			"value": "151070790290164054",
+			"enabled": true
+		},
+		{
+			"key": "testStartTime",
+			"value": 1615874018913,
+			"enabled": true
+		},
+		{
+			"key": "AccessToken",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "TotalOwnedDoc",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "TotalSharedDoc",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "FolderToDel",
+			"value": "f1nbjc2d950e0a05b4794b65212c78dda38c3",
+			"enabled": true
+		},
+		{
+			"key": "DocRenameValue",
+			"value": "API Test Document - Rename732",
+			"enabled": true
+		},
+		{
+			"key": "merge_report_data_url",
+			"value": "https://docs.localzoho.com/writer/api/v1/merge/job/8ca6f71296049ea0684b8c75f42b7a86d4803621888179e79504a0ad2cfa6533/data",
+			"enabled": true
+		},
+		{
+			"key": "OfficeIntegAPIKey",
+			"value": "56a1c6cd0ab0f26b344acd83ab692144",
+			"enabled": true
+		},
+		{
+			"key": "Preview_docURL",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "Edit_docURL",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "Co-Edit_docURL\n",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "Watermark_docURL",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "officeInteg_ConDocURL\n",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "User_Session_ID",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "Redirect_uri",
+			"value": "https://docs.localzoho.com/home",
+			"enabled": true
+		},
+		{
+			"key": "Client_Secret",
+			"value": "24bec74ee82eb78468d3bbb84e971ee04c558e8932",
+			"enabled": true
+		},
+		{
+			"key": "Client_ID",
+			"value": "1000.6MSZB4ZNAB2V09Z42E0XQQAV2Z4PUH",
+			"enabled": true
+		},
+		{
+			"key": "Refresh_Token",
+			"value": "1000.21eca999aed1897ba2808b81e4bc8097.5ea53addb49756f8a44486a0029fbc5c",
+			"enabled": true
+		},
+		{
+			"key": "accountsURL",
+			"value": "accounts.localzoho.com",
+			"enabled": true
+		},
+		{
+			"key": "parentFolder",
+			"value": "mscs0189ecbab36d14b18bc389687ecca5429",
+			"enabled": true
+		},
+		{
+			"key": "template_id",
+			"value": "pqh570f33aa9b1ade4240a7cafdbb313b29df",
+			"enabled": true
+		},
+		{
+			"key": "del_temp_id",
+			"value": "q0eowec77f0924e56493f91f7453f2c3e8984",
+			"enabled": true
+		},
+		{
+			"key": "wd_folder_id",
+			"value": "8n2lk594cf149e0094fe585b3c784d3306ab3",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "wd_template_id",
+			"value": "8n2lk590944fab4f747c2b3cc557cd6dacf27",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "folderOwnerName",
+			"value": "paddy2 G",
+			"type": "any",
+			"enabled": true
+		}
+	],
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2023-03-08T07:34:46.845Z",
+	"_postman_exported_using": "Postman/10.11.1"
+}
