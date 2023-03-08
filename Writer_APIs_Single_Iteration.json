@@ -16,7 +16,6 @@
 							"listen": "test",
 							"script": {
 								"exec": [
-									"console.log(\"log by paddy Response -\",JSON.stringify(jsonData));\r",
 									"var jsonData = pm.response.json();\r",
 									"pm.test(\"Checking Documnet id is not null.\", function () {\r",
 									"    var docID = jsonData.document_id;\r",
