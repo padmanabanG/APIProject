@@ -4,7 +4,7 @@
 	"values": [
 		{
 			"key": "writerContext",
-			"value": "https://writerinteg.localzoho.com/writer/api/v1",
+			"value": "https://writer.localzoho.com/writer/api/v1",
 			"enabled": true
 		},
 		{
