@@ -1,0 +1,645 @@
+{
+	"id": "e9ce81ae-7547-4512-8b89-0a5dd104a6f8",
+	"values": [
+		{
+			"key": "wordPress_Site_ID",
+			"value": "167861443",
+			"enabled": true
+		},
+		{
+			"key": "wordPress_AC_ID",
+			"value": "173167990",
+			"enabled": true
+		},
+		{
+			"key": "Authorization",
+			"value": "Zoho-oauthtoken 1000.c28ca31e54c4f51254764352767403b8.77965de49a6fe3793924c7c2a0784992",
+			"enabled": true
+		},
+		{
+			"key": "folder_id",
+			"value": "h0ub421da0674e311458a95e0681090930fc4",
+			"enabled": true
+		},
+		{
+			"key": "blogger_AC_ID",
+			"value": "11106584308980063050",
+			"enabled": true
+		},
+		{
+			"key": "blogger_blog_id",
+			"value": "151070790290164054",
+			"enabled": true
+		},
+		{
+			"key": "testStartTime",
+			"value": 1571820578834,
+			"enabled": true
+		},
+		{
+			"key": "merge_data_CSV_url",
+			"value": "https://files-accl.zohoexternal.com/public/workdrive-external/download/ql32s803c5c4846cd43479a983cd180cccbc6?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%7D",
+			"enabled": true
+		},
+		{
+			"key": "merge_data_JSON_url",
+			"value": "https://files-accl.zohoexternal.com/public/workdrive-external/download/ql32saade33a4be784da090254bd76048012a?x-cli-msg=%7B%22isFileOwner%22%3Afalse%2C%22version%22%3A%221.0%22%7D",
+			"enabled": true
+		},
+		{
+			"key": "webhook_invoke_url",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "AccessToken",
+			"value": "1000.c38ed4e459214def6fce6c533ffbcf24.5df6babd731841d61e7d0eaf428dfa4a",
+			"enabled": true
+		},
+		{
+			"key": "TotalOwnedDoc",
+			"value": 205,
+			"enabled": true
+		},
+		{
+			"key": "TotalSharedDoc",
+			"value": 14,
+			"enabled": true
+		},
+		{
+			"key": "FolderToDel",
+			"value": "8swibf36c2a1135354652965b51893dfb65a3",
+			"enabled": true
+		},
+		{
+			"key": "DocRenameValue",
+			"value": "API Test Document - Rename",
+			"enabled": true
+		},
+		{
+			"key": "merge_report_data_url",
+			"value": "https://docs.zoho.com/writer/api/v1/merge/job/d8890de55386bff4431ffeaa15968fccdb3dcbaba93a60043d0fc5a6327137f8/data",
+			"enabled": true
+		},
+		{
+			"key": "OfficeIntegAPIKey",
+			"value": "bfd802d9720c03049057fed6cff94fd8",
+			"enabled": true
+		},
+		{
+			"key": "Preview_docURL",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "Edit_docURL",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "Co-Edit_docURL",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "Watermark_docURL",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "officeInteg_ConDocURL",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "User_Session_ID",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "Document_Defaults",
+			"value": "[{\"orientation\":\"portrait\",\"paper_size\":\"Letter\",\"font_name\":\"Roboto (Body)\",\"font_size\":14,\"track_changes\":\"disabled\",\"margin\":{\"left\":\"1.5in\",\"right\":\"1.5in\",\"top\":\"0.5in\",\"bottom\":\"0.5in\"}},{\"orientation\":\"landscape\",\"paper_size\":\"Legal\",\"font_name\":\"League Gothic  (Headings)\",\"font_size\":17,\"track_changes\":\"enabled\",\"margin\":{\"left\":\"42.5mm\",\"right\":\"35mm\",\"top\":\"42.5mm\",\"bottom\":\"35mm\"}},{\"orientation\":\"portrait\",\"paper_size\":\"Letter\",\"font_name\":\"Anonymous Pro\",\"font_size\":14,\"track_changes\":\"enabled\",\"margin\":{\"left\":\"2.5in\",\"right\":\"2.5in\",\"top\":\"1.5in\",\"bottom\":\"1.5in\"}},{\"orientation\":\"landscape\",\"paper_size\":\"A4\",\"font_name\":\"Anton\",\"font_size\":28,\"track_changes\":\"disabled\",\"margin\":{\"left\":\"32.5mm\",\"right\":\"25mm\",\"top\":\"32.5mm\",\"bottom\":\"25mm\"}},{\"orientation\":\"portrait\",\"paper_size\":\"Executive\",\"font_name\":\"Archivo Black\",\"font_size\":14,\"track_changes\":\"enabled\",\"margin\":{\"left\":\"2.5in\",\"right\":\"2.5in\",\"top\":\"1.5in\",\"bottom\":\"1.5in\"}},{\"orientation\":\"landscape\",\"paper_size\":\"Legal\",\"font_name\":\"Arimo\",\"font_size\":13,\"track_changes\":\"disabled\",\"margin\":{\"left\":\"32.5mm\",\"right\":\"25mm\",\"top\":\"32.5mm\",\"bottom\":\"25mm\"}},{\"orientation\":\"landscape\",\"paper_size\":\"A4\",\"font_name\":\"Arvo\",\"font_size\":24,\"track_changes\":\"enabled\",\"margin\":{\"left\":\"2.5in\",\"right\":\"2.5in\",\"top\":\"1.5in\",\"bottom\":\"1.5in\"}},{\"orientation\":\"portrait\",\"paper_size\":\"Executive\",\"font_name\":\"Caladea\",\"font_size\":33,\"track_changes\":\"disabled\",\"margin\":{\"left\":\"32.5mm\",\"right\":\"25mm\",\"top\":\"32.5mm\",\"bottom\":\"25mm\"}},{\"orientation\":\"landscape\",\"paper_size\":\"Legal\",\"font_name\":\"Carlito\",\"font_size\":24,\"track_changes\":\"enabled\",\"margin\":{\"left\":\"2.5in\",\"right\":\"2.5in\",\"top\":\"1.5in\",\"bottom\":\"1.5in\"}},{\"orientation\":\"portrait\",\"paper_size\":\"Letter\",\"font_name\":\"Cousine\",\"font_size\":33,\"track_changes\":\"disabled\",\"margin\":{\"left\":\"32.5mm\",\"right\":\"25mm\",\"top\":\"32.5mm\",\"bottom\":\"25mm\"}},{\"orientation\":\"landscape\",\"paper_size\":\"A4\",\"font_name\":\"DejaVu Sans\",\"font_size\":28,\"track_changes\":\"enabled\",\"margin\":{\"left\":\"2.5in\",\"right\":\"2.5in\",\"top\":\"1.5in\",\"bottom\":\"1.5in\"}},{\"orientation\":\"portrait\",\"paper_size\":\"Executive\",\"font_name\":\"Fira Sans\",\"font_size\":18,\"track_changes\":\"disabled\",\"margin\":{\"left\":\"32.5mm\",\"right\":\"25mm\",\"top\":\"32.5mm\",\"bottom\":\"25mm\"}},{\"orientation\":\"portrait\",\"paper_size\":\"Legal\",\"font_name\":\"Heuristica\",\"font_size\":34,\"track_changes\":\"enabled\",\"margin\":{\"left\":\"2.5in\",\"right\":\"2.5in\",\"top\":\"1.5in\",\"bottom\":\"1.5in\"}},{\"orientation\":\"landscape\",\"paper_size\":\"Letter\",\"font_name\":\"Junicode\",\"font_size\":21,\"track_changes\":\"disabled\",\"margin\":{\"left\":\"32.5mm\",\"right\":\"25mm\",\"top\":\"32.5mm\",\"bottom\":\"25mm\"}},{\"orientation\":\"portrait\",\"paper_size\":\"Legal\",\"font_name\":\"Lato\",\"font_size\":34,\"track_changes\":\"disabled\",\"margin\":{\"left\":\"2.5in\",\"right\":\"2.5in\",\"top\":\"1.5in\",\"bottom\":\"1.5in\"}},{\"orientation\":\"landscape\",\"paper_size\":\"Letter\",\"font_name\":\"Liberation Mono\",\"font_size\":38,\"track_changes\":\"enabled\",\"margin\":{\"left\":\"32.5mm\",\"right\":\"25mm\",\"top\":\"32.5mm\",\"bottom\":\"25mm\"}},{\"orientation\":\"portrait\",\"paper_size\":\"Executive\",\"font_name\":\"Liberation Sans\",\"font_size\":34,\"track_changes\":\"disabled\",\"margin\":{\"left\":\"2.5in\",\"right\":\"2.5in\",\"top\":\"1.5in\",\"bottom\":\"1.5in\"}},{\"orientation\":\"landscape\",\"paper_size\":\"A4\",\"font_name\":\"Liberation Serif\",\"font_size\":38,\"track_changes\":\"enabled\",\"margin\":{\"left\":\"32.5mm\",\"right\":\"25mm\",\"top\":\"32.5mm\",\"bottom\":\"25mm\"}},{\"orientation\":\"portrait\",\"paper_size\":\"Letter\",\"font_name\":\"Open Sans\",\"font_size\":34,\"track_changes\":\"disabled\",\"margin\":{\"left\":\"2.5in\",\"right\":\"2.5in\",\"top\":\"1.5in\",\"bottom\":\"1.5in\"}},{\"orientation\":\"landscape\",\"paper_size\":\"Legal\",\"font_name\":\"Roboto\",\"font_size\":38,\"track_changes\":\"enabled\",\"margin\":{\"left\":\"32.5mm\",\"right\":\"25mm\",\"top\":\"32.5mm\",\"bottom\":\"25mm\"}},{\"orientation\":\"portrait\",\"paper_size\":\"Letter\",\"font_name\":\"TeX Gyre Heros\",\"font_size\":40,\"track_changes\":\"enabled\",\"margin\":{\"left\":\"2.5in\",\"right\":\"2.5in\",\"top\":\"1.5in\",\"bottom\":\"1.5in\"}},{\"orientation\":\"landscape\",\"paper_size\":\"Legal\",\"font_name\":\"TeXGyreAdventor\",\"font_size\":12,\"track_changes\":\"disabled\",\"margin\":{\"left\":\"32.5mm\",\"right\":\"25mm\",\"top\":\"32.5mm\",\"bottom\":\"25mm\"}},{\"orientation\":\"portrait\",\"paper_size\":\"A4\",\"font_name\":\"TeXGyreCursor\",\"font_size\":40,\"track_changes\":\"enabled\",\"margin\":{\"left\":\"2.5in\",\"right\":\"2.5in\",\"top\":\"1.5in\",\"bottom\":\"1.5in\"}},{\"orientation\":\"landscape\",\"paper_size\":\"Executive\",\"font_name\":\"TeXGyrePagella\",\"font_size\":12,\"track_changes\":\"disabled\",\"margin\":{\"left\":\"32.5mm\",\"right\":\"25mm\",\"top\":\"32.5mm\",\"bottom\":\"25mm\"}},{\"orientation\":\"portrait\",\"paper_size\":\"A4\",\"font_name\":\"Tinos\",\"font_size\":40,\"track_changes\":\"enabled\",\"margin\":{\"left\":\"2.5in\",\"right\":\"2.5in\",\"top\":\"1.5in\",\"bottom\":\"1.5in\"}},{\"orientation\":\"landscape\",\"paper_size\":\"Executive\",\"font_name\":\"Lora\",\"font_size\":12,\"track_changes\":\"disabled\",\"margin\":{\"left\":\"32.5mm\",\"right\":\"25mm\",\"top\":\"32.5mm\",\"bottom\":\"25mm\"}}]",
+			"enabled": true
+		},
+		{
+			"key": "CallBack_Settings",
+			"value": "[{\"save_format\":\"docx\",\"save_url\":\"https://domain.com/save.php\",\"context_info\":\"additional doc / user info\"},{\"save_format\":\"pdf\",\"save_url\":\"https://domain.com/save.php\",\"context_info\":\"additional doc / user info\"},{\"save_format\":\"doc\",\"save_url\":\"https://domain.com/save.php\",\"context_info\":\"additional doc / user info\"},{\"save_format\":\"zdoc\",\"save_url\":\"https://domain.com/save.php\",\"context_info\":\"additional doc / user info\"},{\"save_format\":\"odt\",\"save_url\":\"https://domain.com/save.php\",\"context_info\":\"additional doc / user info\"},{\"save_format\":\"txt\",\"save_url\":\"https://domain.com/save.php\",\"context_info\":\"additional doc / user info\"},{\"save_format\":\"html\",\"save_url\":\"https://domain.com/save.php\",\"context_info\":\"additional doc / user info\"},{\"save_format\":\"rtf\",\"save_url\":\"https://domain.com/save.php\",\"context_info\":\"additional doc / user info\"},{\"save_format\":\"htm\",\"save_url\":\"https://domain.com/save.php\",\"context_info\":\"additional doc / user info\"},{\"save_format\":\"zip\",\"save_url\":\"https://domain.com/save.php\",\"context_info\":\"additional doc / user info\"}]",
+			"enabled": true
+		},
+		{
+			"key": "Editor_Settings",
+			"value": "[{\"unit\":\"in\",\"language\":\"en\",\"view\":\"webview\"},{\"unit\":\"mm\",\"language\":\"da\",\"view\":\"pageview\"},{\"unit\":\"in\",\"language\":\"de\",\"view\":\"webview\"},{\"unit\":\"mm\",\"language\":\"es\",\"view\":\"pageview\"},{\"unit\":\"in\",\"language\":\"fr\",\"view\":\"webview\"},{\"unit\":\"mm\",\"language\":\"hu\",\"view\":\"pageview\"},{\"unit\":\"in\",\"language\":\"it\",\"view\":\"webview\"},{\"unit\":\"mm\",\"language\":\"ja\",\"view\":\"pageview\"},{\"unit\":\"in\",\"language\":\"nl\",\"view\":\"webview\"},{\"unit\":\"mm\",\"language\":\"pl\",\"view\":\"pageview\"},{\"unit\":\"in\",\"language\":\"pt\",\"view\":\"webview\"},{\"unit\":\"mm\",\"language\":\"ru\",\"view\":\"pageview\"},{\"unit\":\"in\",\"language\":\"sv\",\"view\":\"webview\"},{\"unit\":\"mm\",\"language\":\"tr\",\"view\":\"pageview\"},{\"unit\":\"in\",\"language\":\"zh\",\"view\":\"webview\"},{\"unit\":\"mm\",\"language\":\"zh_CN\",\"view\":\"pageview\"},{\"unit\":\"in\",\"language\":\"vi\",\"view\":\"pageview\"},{\"unit\":\"mm\",\"language\":\"cs\",\"view\":\"webview\"},{\"unit\":\"in\",\"language\":\"el\",\"view\":\"pageview\"},{\"unit\":\"mm\",\"language\":\"et\",\"view\":\"pageview\"},{\"unit\":\"in\",\"language\":\"fi\",\"view\":\"webview\"},{\"unit\":\"mm\",\"language\":\"hr\",\"view\":\"pageview\"},{\"unit\":\"in\",\"language\":\"ko\",\"view\":\"pageview\"},{\"unit\":\"mm\",\"language\":\"lt\",\"view\":\"webview\"},{\"unit\":\"in\",\"language\":\"sk\",\"view\":\"webview\"},{\"unit\":\"mm\",\"language\":\"th\",\"view\":\"pageview\"},{\"unit\":\"in\",\"language\":\"uk\",\"view\":\"webview\"},{\"unit\":\"mm\",\"language\":\"bg\",\"view\":\"pageview\"},{\"unit\":\"in\",\"language\":\"ca\",\"view\":\"webview\"},{\"unit\":\"mm\",\"language\":\"no\",\"view\":\"pageview\"},{\"unit\":\"in\",\"language\":\"ro\",\"view\":\"webview\"},{\"unit\":\"mm\",\"language\":\"ar\",\"view\":\"pageview\"},{\"unit\":\"in\",\"language\":\"iw\",\"view\":\"webview\"},{\"unit\":\"mm\",\"language\":\"ur\",\"view\":\"pageview\"}]",
+			"enabled": true
+		},
+		{
+			"key": "Permissions",
+			"value": "[{\"document.export\":false,\"document.print\":true,\"document.edit\":true,\"review.changes.resolve\":false,\"review.comment\":true,\"collab.chat\":true},{\"document.export\":true,\"document.print\":false,\"document.edit\":true,\"review.changes.resolve\":false,\"review.comment\":true,\"collab.chat\":true},{\"document.export\":true,\"document.print\":true,\"document.edit\":false,\"review.changes.resolve\":false,\"review.comment\":true,\"collab.chat\":true},{\"document.export\":true,\"document.print\":true,\"document.edit\":true,\"review.changes.resolve\":true,\"review.comment\":true,\"collab.chat\":true},{\"document.export\":true,\"document.print\":true,\"document.edit\":true,\"review.changes.resolve\":false,\"review.comment\":false,\"collab.chat\":true},{\"document.export\":true,\"document.print\":true,\"document.edit\":true,\"review.changes.resolve\":false,\"review.comment\":true,\"collab.chat\":false},{\"document.export\":true,\"document.print\":true,\"document.edit\":true,\"review.changes.resolve\":false,\"review.comment\":true,\"collab.chat\":true}]",
+			"enabled": true
+		},
+		{
+			"key": "Doc_Info",
+			"value": "{\"document_name\":\"API Testing - Create Document\",\"document_id\":\"1349\"}",
+			"enabled": true
+		},
+		{
+			"key": "User_Info",
+			"value": "{\"user_id\":\"1561\", \"display_name\":\"Padmanaban\"}",
+			"enabled": true
+		},
+		{
+			"key": "Watermark_Settings",
+			"value": "[{\"text\":\"API Automation\",\"type\":\"text\",\"orientation\":\"diagonal\",\"font_name\":\"Lato\",\"font_size\":\"18\",\"font_color\":\"#FF1010\",\"opacity\":\"65.0\"},{\"text\":\"API Automation\",\"type\":\"text\",\"orientation\":\"diagonal\",\"font_name\":\"Anonymous Pro\",\"font_size\":\"18\",\"font_color\":\"#23925F\",\"opacity\":\"65.0\"},{\"text\":\"API Automation\",\"type\":\"text\",\"orientation\":\"diagonal\",\"font_name\":\"Anton\",\"font_size\":\"18\",\"font_color\":\"#CB6A87\",\"opacity\":\"65.0\"},{\"text\":\"API Automation\",\"type\":\"text\",\"orientation\":\"diagonal\",\"font_name\":\"Lora\",\"font_size\":\"38\",\"font_color\":\"#00B0F0\",\"opacity\":\"45.0\"},{\"text\":\"API Automation\",\"type\":\"text\",\"orientation\":\"diagonal\",\"font_name\":\"DejaVu Sans\",\"font_size\":\"18\",\"font_color\":\"#B50000\",\"opacity\":\"65.0\"},{\"text\":\"API Automation\",\"type\":\"text\",\"orientation\":\"diagonal\",\"font_name\":\"Fira Sans\",\"font_size\":\"18\",\"font_color\":\"#FFBC64\",\"opacity\":\"65.0\"},{\"text\":\"API Automation\",\"type\":\"text\",\"orientation\":\"diagonal\",\"font_name\":\"Heuristica\",\"font_size\":\"36\",\"font_color\":\"#BC6B00\",\"opacity\":\"45.0\"},{\"text\":\"API Automation\",\"type\":\"text\",\"orientation\":\"diagonal\",\"font_name\":\"Open Sans\",\"font_size\":\"46\",\"font_color\":\"#F2D991\",\"opacity\":\"75.0\"},{\"text\":\"API Automation\",\"type\":\"text\",\"orientation\":\"diagonal\",\"font_name\":\"TeXGyreCursor\",\"font_size\":\"56\",\"font_color\":\"#FF0000\",\"opacity\":\"35.0\"},{\"text\":\"API Automation Horizontal\",\"type\":\"text\",\"orientation\":\"horizontal\",\"font_name\":\"Arvo\",\"font_size\":\"26\",\"font_color\":\"#00B050\",\"opacity\":\"40.50\"},{\"text\":\"API Automation Horizontal\",\"type\":\"text\",\"orientation\":\"horizontal\",\"font_name\":\"Roboto\",\"font_size\":\"32\",\"font_color\":\"#CD9D17\",\"opacity\":\"37.50\"},{\"text\":\"API Automation Horizontal\",\"type\":\"text\",\"orientation\":\"horizontal\",\"font_name\":\"TeXGyrePagella\",\"font_size\":\"52\",\"font_color\":\"#FFC000\",\"opacity\":\"77.50\"},{\"text\":\"API Automation Horizontal\",\"type\":\"text\",\"orientation\":\"horizontal\",\"font_name\":\"Archivo Black\",\"font_size\":\"32\",\"font_color\":\"#612234\",\"opacity\":\"63.20\"},{\"text\":\"API Automation Horizontal\",\"type\":\"text\",\"orientation\":\"horizontal\",\"font_name\":\"TeXGyreAdventor\",\"font_size\":\"37\",\"font_color\":\"#C00000\",\"opacity\":\"43.20\"},{\"text\":\"API Automation Horizontal\",\"type\":\"text\",\"orientation\":\"horizontal\",\"font_name\":\"League Gothic  (Headings)\",\"font_size\":\"26\",\"font_color\":\"#B8EED5\",\"opacity\":\"69.50\"},{\"text\":\"API Automation Horizontal\",\"type\":\"text\",\"orientation\":\"horizontal\",\"font_name\":\"Junicode\",\"font_size\":\"16\",\"font_color\":\"#7E4700\",\"opacity\":\"69.50\"},{\"text\":\"API Automation Horizontal\",\"type\":\"text\",\"orientation\":\"horizontal\",\"font_name\":\"Carlito\",\"font_size\":\"26\",\"font_color\":\"#FF1010\",\"opacity\":\"69.50\"},{\"text\":\"API Automation Vertical\",\"type\":\"text\",\"orientation\":\"vertical\",\"font_name\":\"Cousine\",\"font_size\":\"43\",\"font_color\":\"#7E4700\",\"opacity\":\"86.30\"},{\"text\":\"API Automation Vertical\",\"type\":\"text\",\"orientation\":\"vertical\",\"font_name\":\"Roboto (Body)\",\"font_size\":\"43\",\"font_color\":\"#3FD08E\",\"opacity\":\"86.30\"},{\"text\":\"API Automation Vertical\",\"type\":\"text\",\"orientation\":\"vertical\",\"font_name\":\"Arimo\",\"font_size\":\"43\",\"font_color\":\"#411623\",\"opacity\":\"86.30\"},{\"text\":\"API Automation Vertical\",\"type\":\"text\",\"orientation\":\"vertical\",\"font_name\":\"Tinos\",\"font_size\":\"29\",\"font_color\":\"#FFFF00\",\"opacity\":\"36.30\"},{\"text\":\"API Automation Vertical\",\"type\":\"text\",\"orientation\":\"vertical\",\"font_name\":\"Caladea\",\"font_size\":\"43\",\"font_color\":\"#FFA6A6\",\"opacity\":\"86.30\"},{\"text\":\"API Automation Vertical\",\"type\":\"text\",\"orientation\":\"vertical\",\"font_name\":\"TeX Gyre Heros\",\"font_size\":\"46\",\"font_color\":\"#896910\",\"opacity\":\"66.30\"},{\"text\":\"API Automation Vertical\",\"type\":\"text\",\"orientation\":\"vertical\",\"font_name\":\"Liberation Mono\",\"font_size\":\"31\",\"font_color\":\"#A6DBFE\",\"opacity\":\"39.30\"},{\"text\":\"API Automation Vertical\",\"type\":\"text\",\"orientation\":\"vertical\",\"font_name\":\"Liberation Sans\",\"font_size\":\"31\",\"font_color\":\"#119FFD\",\"opacity\":\"39.30\"}]",
+			"enabled": true
+		},
+		{
+			"key": "Co-edit_Doc_Defaults",
+			"value": "[{\"track_changes\": \"enabled\"},{\"track_changes\": \"disabled\"}]",
+			"enabled": true
+		},
+		{
+			"key": "CurReq_Doc_Defaults",
+			"value": "{\"orientation\":\"landscape\",\"paper_size\":\"Legal\",\"font_name\":\"Arimo\",\"font_size\":13,\"track_changes\":\"disabled\",\"margin\":{\"left\":\"32.5mm\",\"right\":\"25mm\",\"top\":\"32.5mm\",\"bottom\":\"25mm\"}}",
+			"enabled": true
+		},
+		{
+			"key": "curReq_Prev_Lang",
+			"value": "\"en\",\"da\",\"de\",\"es\",\"fr\",\"hu\",\"it\",\"ja\",\"nl\",\"pl\",\"pt\",\"ru\",\"sv\",\"tr\",\"zh\",\"zh_CN\",\"vi\",\"cs\",\"el\",\"et\",\"fi\",\"hr\",\"ko\",\"it\",\"sk\",\"th\",\"uk\",\"bg\",\"ca\",\"no\",\"ro\",\"ar\",\"iw\",\"ur\"",
+			"enabled": true
+		},
+		{
+			"key": "CurReqCallBack_settings",
+			"value": "{\"save_format\":\"txt\",\"save_url\":\"https://domain.com/save.php\",\"context_info\":\"additional doc / user info\"}",
+			"enabled": true
+		},
+		{
+			"key": "CurReq_Editor_Settings",
+			"value": "{\"unit\":\"mm\",\"language\":\"hu\",\"view\":\"pageview\"}",
+			"enabled": true
+		},
+		{
+			"key": "CurReqPermissions",
+			"value": "{\"document.export\":true,\"document.print\":true,\"document.edit\":true,\"review.changes.resolve\":false,\"review.comment\":true,\"collab.chat\":false}",
+			"enabled": true
+		},
+		{
+			"key": "curReq_CoEdit_DocDefaults",
+			"value": "{\"track_changes\":\"enabled\"}",
+			"enabled": true
+		},
+		{
+			"key": "curReq_WatermarkSettings",
+			"value": "{\"text\":\"API Automation Horizontal\",\"type\":\"text\",\"orientation\":\"horizontal\",\"font_name\":\"TeXGyrePagella\",\"font_size\":\"52\",\"font_color\":\"#FFC000\",\"opacity\":\"77.50\"}",
+			"enabled": true
+		},
+		{
+			"key": "convertion_DocFormat",
+			"value": "html",
+			"enabled": true
+		},
+		{
+			"key": "writer_Convertion_DocFormat",
+			"value": "pdf",
+			"enabled": true
+		},
+		{
+			"key": "download_DocFormat",
+			"value": "docx",
+			"enabled": true
+		},
+		{
+			"key": "CreateDocParams_OInteg",
+			"value": "{\"CallBack_Settings\":\"CurReqCallBack_settings\",\"Document_Defaults\":\"CurReq_Doc_Defaults\",\"Editor_Settings\":\"CurReq_Editor_Settings\",\"Permissions\":\"CurReqPermissions\"}",
+			"enabled": true
+		},
+		{
+			"key": "EditDocParams_OInteg",
+			"value": "{\"CallBack_Settings\":\"CurReqCallBack_settings\", \"Editor_Settings\":\"CurReq_Editor_Settings\", \"Permissions\":\"CurReqPermissions\"}",
+			"enabled": true
+		},
+		{
+			"key": "CoEditDocParams_OInteg",
+			"value": "{\"CallBack_Settings\":\"CurReqCallBack_settings\", \"Co-edit_Doc_Defaults\":\"curReq_CoEdit_DocDefaults\", \"Editor_Settings\":\"CurReq_Editor_Settings\", \"Permissions\":\"CurReqPermissions\"}",
+			"enabled": true
+		},
+		{
+			"key": "PreviewURLParams_OInteg",
+			"value": "\"en\",\"da\",\"de\",\"es\",\"fr\",\"hu\",\"it\",\"ja\",\"nl\",\"pl\",\"pt\",\"ru\",\"sv\",\"tr\",\"zh\",\"zh_CN\",\"vi\",\"cs\",\"el\",\"et\",\"fi\",\"hr\",\"ko\",\"it\",\"sk\",\"th\",\"uk\",\"bg\",\"ca\",\"no\",\"ro\",\"ar\",\"iw\",\"ur\"",
+			"enabled": true
+		},
+		{
+			"key": "getDocList",
+			"value": "(array,curReqarray,curReqName) => {\n    var i = parseInt(pm.globals.get(\"documentAPIs_i\"));\n    console.log(i);\n    console.log(array[i]);\n    var getDocList = array[i];\n    if(i < array.length){\n        for(var j=0;j<getDocList.length;j++){\n            console.log(\"Key - \"+curReqarray[j]);\n            console.log(\"Value - \"+getDocList[j]);\n            pm.globals.set(curReqarray[j], getDocList[j]);\n        }\n        \n        if(i === array.length-1){\n            pm.globals.set(\"documentAPIs_i\", 0);\n        }\n        else{\n            console.log(\"Not exceeded!\");\n            pm.globals.set(\"documentAPIs_i\", i+1);\n            postman.setNextRequest(curReqName);\n        }\n    }\n}",
+			"enabled": true
+		},
+		{
+			"key": "curReqGetDocListCategory",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "curReqGetDocListSortBy",
+			"value": "modified_time",
+			"enabled": true
+		},
+		{
+			"key": "curReqGetDocListOffset",
+			"value": 2,
+			"enabled": true
+		},
+		{
+			"key": "curReqGetDocListLimit",
+			"value": 10,
+			"enabled": true
+		},
+		{
+			"key": "curReqFolderCategory",
+			"value": null,
+			"enabled": true
+		},
+		{
+			"key": "mergeAsInlineFormat",
+			"value": "inline",
+			"enabled": true
+		},
+		{
+			"key": "mergeAsInlineSubject",
+			"value": "API Merge and Mail as Attachment with merge data",
+			"enabled": true
+		},
+		{
+			"key": "mergeAsInlineEmail",
+			"value": "padmanaban.g@zohocorp.com",
+			"enabled": true
+		},
+		{
+			"key": "mergeDataInput",
+			"value": "{data:[{'name':'paddy','email':'paddy@mail.com'}]}",
+			"enabled": true
+		},
+		{
+			"key": "curReqmergeDataParam",
+			"value": "merge_data",
+			"enabled": true
+		},
+		{
+			"key": "mergeAsAttachMsg",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "mergeDeliverFormat",
+			"value": "pdf",
+			"enabled": true
+		},
+		{
+			"key": "mergeWebhookData",
+			"value": "{'invoke_url': '', 'invoke_period': 'oncomplete'}",
+			"enabled": true
+		},
+		{
+			"key": "mergeTo",
+			"value": "singledoc",
+			"enabled": true
+		},
+		{
+			"key": "mergeDeliverPWD",
+			"value": 123,
+			"enabled": true
+		},
+		{
+			"key": "mergeDownloadFormat",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "mergeDownloadPWD",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "mergeDownloadData",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "docFinal",
+			"value": "{'mark_as_final': false}",
+			"enabled": true
+		},
+		{
+			"key": "docLock",
+			"value": "{'lock': false}",
+			"enabled": true
+		},
+		{
+			"key": "publishDoc",
+			"value": "organization",
+			"enabled": true
+		},
+		{
+			"key": "publishDocVersion",
+			"value": "organization",
+			"enabled": true
+		},
+		{
+			"key": "postToWordPress",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "postToBlogger",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "postType_WP",
+			"value": "publish",
+			"enabled": true
+		},
+		{
+			"key": "title_WP",
+			"value": "WordPress post as Publish",
+			"enabled": true
+		},
+		{
+			"key": "scheduleTime_WP",
+			"value": "1615882067225",
+			"enabled": true
+		},
+		{
+			"key": "tags_WP",
+			"value": "#testtagspublish",
+			"enabled": true
+		},
+		{
+			"key": "style_WP",
+			"value": "none",
+			"enabled": true
+		},
+		{
+			"key": "postType_Blogger",
+			"value": "draft",
+			"enabled": true
+		},
+		{
+			"key": "title_Blogger",
+			"value": "Blogger post as Draft ",
+			"enabled": true
+		},
+		{
+			"key": "schedlueTime_Blogger",
+			"value": "1615882080417",
+			"enabled": true
+		},
+		{
+			"key": "documentAPIs_i",
+			"value": 5,
+			"enabled": true
+		},
+		{
+			"key": "convertionAPIs_i",
+			"value": "0",
+			"enabled": true
+		},
+		{
+			"key": "mergeAPIs_i",
+			"value": "0",
+			"enabled": true
+		},
+		{
+			"key": "metaAPIs_i",
+			"value": 0,
+			"enabled": true
+		},
+		{
+			"key": "publishAPIs_i",
+			"value": 1,
+			"enabled": true
+		},
+		{
+			"key": "getDocListCurReq",
+			"value": "curReqGetDocListCategory,curReqGetDocListSortBy,curReqGetDocListOffset,curReqGetDocListLimit",
+			"enabled": true
+		},
+		{
+			"key": "mergeDataParams",
+			"value": "merge_data,merge_data_csv_url,merge_data_json_url",
+			"enabled": true
+		},
+		{
+			"key": "mergeDeliverFileURL",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "mergeDownloadFileURL",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "mergeAPIOInteg_i",
+			"value": "0",
+			"enabled": true
+		},
+		{
+			"key": "editorAPIOInteg_i",
+			"value": 6,
+			"enabled": true
+		},
+		{
+			"key": "watermark_i",
+			"value": 12,
+			"enabled": true
+		},
+		{
+			"key": "docFavourite",
+			"value": "{'favourite': false}",
+			"enabled": true
+		},
+		{
+			"key": "mergeAPIFunc",
+			"value": "(inputArray,curReqMergeParams,mergeDataParams,curReqName) => {\n    var i = parseInt(pm.globals.get(\"mergeAPIs_i\"));\n    //console.log(i);\n    console.log(inputArray[i]);\n    var mergeEmailArray = inputArray[i];\n    var k = parseInt(pm.globals.get(\"mergeDataParams_k\"));\n    console.log(\"k---\"+k);\n    if(i < inputArray.length){\n        for(var j=0;j<mergeEmailArray.length;j++){\n            //console.log(\"Key - \"+curReqMergeParams[j]);\n            //console.log(\"Value - \"+mergeEmailArray[j]);\n            pm.globals.set(curReqMergeParams[j], mergeEmailArray[j]);\n            \n        }\n        if(k < mergeDataParams.length-1 && i !== inputArray.length-1){\n                pm.globals.set(\"curReqmergeDataParam\", mergeDataParams[k]);\n                console.log(\"Merge Data Key - \"+mergeDataParams[k]);\n                k++;\n                pm.globals.set(\"mergeDataParams_k\",k);\n            }\n        else{\n            pm.globals.set(\"curReqmergeDataParam\", mergeDataParams[k]);\n            console.log(\"Merge Data Key_else - \"+mergeDataParams[k]);\n            pm.globals.set(\"mergeDataParams_k\",0);\n        }\n        \n        \n            \n        if(i === inputArray.length-1){\n            pm.globals.set(\"mergeAPIs_i\", 0);\n        }\n        else{\n            console.log(\"Not exceeded!\");\n            pm.globals.set(\"mergeAPIs_i\", i+1);\n            postman.setNextRequest(curReqName);\n        }\n    }\n}",
+			"enabled": true
+		},
+		{
+			"key": "singleArrayFunc",
+			"value": "(docFormatArray,curReqName,globalVariableName) => {\n    var i = parseInt(pm.globals.get(\"documentAPIs_i\"));\n    console.log(typeof(i));\n    console.log(docFormatArray[i]);\n    if(i < docFormatArray.length){\n        curReqdocFormat = docFormatArray[i];\n        pm.globals.set(globalVariableName, curReqdocFormat);\n        \n        if(i === docFormatArray.length-1){\n            pm.globals.set(\"documentAPIs_i\", 0);\n           // postman.setNextRequest(\"Get Docs List\");\n        }\n        else{\n            console.log(\"Not exceeded!\");\n            pm.globals.set(\"documentAPIs_i\", i+1);\n            postman.setNextRequest(curReqName);\n        }\n    }\n}",
+			"enabled": true
+		},
+		{
+			"key": "docFauvourite",
+			"value": "{'favourite': true}",
+			"enabled": true
+		},
+		{
+			"key": "docDescription",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "renameDocument",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "invalidTitleData_WP",
+			"value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ac massa id dolor porttitor egestas sed laoreet purus. Donec non nisl volutpat, aliquet justo sed, volutpat nisi. Aliquam maximus hendrerit libero vitae consectetur. In rutrum vel ex et maximus. Cras blandit elit suscipit erat dapibus varius. Vestibulum sit amet convallis justo. Aliquam finibus sem ac massa consectetur porttitor. Fusce ullamcorper sapien tincidunt ligula aliquet, vel vulputate sapien malesuada. Nulla dui sapien, hendrerit bibendum justo ut, fermentum fri",
+			"enabled": true
+		},
+		{
+			"key": "CreateDoc_URL",
+			"value": "curReqDocURL,curReqDocName,curReqFolderID",
+			"enabled": true
+		},
+		{
+			"key": "CreateDoc_Text",
+			"value": "curReqDocName,curReqFolderID",
+			"enabled": true
+		},
+		{
+			"key": "curReqDocURL",
+			"value": "https://calibre-ebook.com/downloads/demos/demo.docx",
+			"enabled": true
+		},
+		{
+			"key": "curReqDocName",
+			"value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ac massa id dolor porttitor egestas sed laoreet purus. Donec non nisl volutpat, aliquet justo sed, volutpat nisi. Aliquam maximus hendrerit libero vitae consectetur. In rutrum vel ex et maximus. Cras blandit elit suscipit erat dapibus varius. Vestibulum sit amet convallis justo. Aliquam finibus sem ac massa consectetur porttitor. Fusce ullamcorper sapien tincidunt ligula aliquet, vel vulputate sapien malesuada. Nulla dui sapien, hendrerit bibendum justo ut, fermentum fri",
+			"enabled": true
+		},
+		{
+			"key": "curReqFolderID",
+			"value": "t9zwm1549e6a03c8446ec95b602a0a2e6fa14",
+			"enabled": true
+		},
+		{
+			"key": "createDoc_FolderName",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "createDoc_FileName",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "editorAPI",
+			"value": "(params,curReqName) => {\n    var paramsJSON = pm.globals.get(params);\n    var globeJSON = JSON.parse(paramsJSON);\n    console.log(\"Globe JSON - \"+globeJSON);\n    \n    var editoSettings = pm.globals.get(\"Editor_Settings\");\n    var i = parseInt(pm.globals.get(\"editorAPIOInteg_i\"));\n    console.log(i);\n    \n    var editoSettingsArray = JSON.parse(editoSettings);\n    \n    console.log(\"Editor Settins Length - \"+editoSettingsArray.length);\n    \n    var curReqCallBackSettings = \"\";\n    if(i < editoSettingsArray.length){\n        for(var key in globeJSON){\n            var callBackSettings = pm.globals.get(key);\n            var callBackArray = JSON.parse(callBackSettings);\n            if(callBackArray.length >= i){\n                curReqCallBackSettings = JSON.stringify(callBackArray[i]);\n                pm.globals.set(globeJSON[key], curReqCallBackSettings);\n                \n            }\n            else{\n                curReqCallBackSettings = JSON.stringify(callBackArray[callBackArray.length-1]);\n                pm.globals.set(globeJSON[key], curReqCallBackSettings);\n            }\n        }\n        if(i === editoSettingsArray.length-1){\n                pm.globals.set(\"editorAPIOInteg_i\", 0);\n            }\n        else{\n            console.log(\"Not exceeded!\");\n            pm.globals.set(\"editorAPIOInteg_i\", i+1);\n            postman.setNextRequest(curReqName);\n        }\n    }\n\n}",
+			"enabled": true
+		},
+		{
+			"key": "CurReqDoc_Info",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "CurReqUser_Info",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "curReqCompareDocTitle",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "curReqCompareDocLang",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "curReqCompareDocURL1",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "curReqCompareDocURL2",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "output_settings",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "signer_data",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "message",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "expire_date",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "signInOrder",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "reminderPeriod",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "createDocText",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "convertionText",
+			"value": "According to Gartner’s Technology Roadmap Survey, approximately 37 percent of the 452 business leaders polled said they were ‘either piloting or using artificial intelligence bots and virtual customer assistance(VCAs).”Of those respondents, 67 percent said they felt such technologies were “high-value tools.”",
+			"enabled": true
+		},
+		{
+			"key": "convertionFileName",
+			"value": "<img onerror=\"alert(1)\" src=\"x\" />",
+			"enabled": true
+		},
+		{
+			"key": "curReqDocText",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "randomNumber",
+			"value": 587,
+			"enabled": true
+		},
+		{
+			"key": "mergeDataParams_k",
+			"value": "0",
+			"enabled": true
+		},
+		{
+			"key": "mail_id",
+			"value": "writerqateam@gmail.com",
+			"enabled": true
+		},
+		{
+			"key": "filename",
+			"value": "Merge & Sign with MergeData",
+			"enabled": true
+		},
+		{
+			"key": null,
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "tries",
+			"value": "",
+			"type": "any",
+			"enabled": true
+		}
+	],
+	"name": "Globals",
+	"_postman_variable_scope": "globals",
+	"_postman_exported_at": "2023-03-08T05:59:44.427Z",
+	"_postman_exported_using": "Postman/10.11.1"
+}
