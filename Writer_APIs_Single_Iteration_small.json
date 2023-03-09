@@ -1,0 +1,492 @@
+{
+	"info": {
+		"_postman_id": "315d512d-0130-4598-816a-ab680c9b9c74",
+		"name": "Writer APIs - Single Iteration",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9079793"
+	},
+	"item": [
+		{
+			"name": "Meta APIs",
+			"item": [
+				{
+					"name": "Document Favourite",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var docFfavourite = pm.globals.get(\"docFavourite\");",
+									"var jsonData = pm.response.json();",
+									"if(docFfavourite.match(\"true\")){",
+									"    pm.test(\"Make doc as favorite\", function () {",
+									"        ",
+									"        pm.expect(typeof jsonData.is_favourite).to.eql(\"boolean\");",
+									"        pm.expect(jsonData.is_favourite).to.eql(true);",
+									"        pm.expect(jsonData.message).to.eql(\"The document has been added to your favorites.\");",
+									"        pm.expect(typeof jsonData.message).to.eql(\"string\");",
+									"    });",
+									"}",
+									"else{",
+									"    pm.test(\"Remove from favorite\", function () {",
+									"    pm.expect(typeof jsonData.is_favourite).to.eql(\"boolean\");",
+									"    pm.expect(jsonData.is_favourite).to.eql(false);",
+									"    pm.expect(jsonData.message).to.eql(\"The document has been removed from your favorite list.\");",
+									"    pm.expect(typeof jsonData.message).to.eql(\"string\");",
+									"});",
+									"}",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var prevFavInput = [\"{'favourite': true}\",\"{'favourite': false}\"];",
+									"var i = parseInt(pm.globals.get(\"metaAPIs_i\"));",
+									"console.log(typeof(i));",
+									"console.log(prevFavInput[i]);",
+									"if(i < prevFavInput.length){",
+									"",
+									"    pm.globals.set(\"docFavourite\",prevFavInput[i]);",
+									"    if(i === prevFavInput.length-1){",
+									"        pm.globals.set(\"metaAPIs_i\", 0);",
+									"    }",
+									"    else{",
+									"        console.log(\"Not exceeded!\");",
+									"        pm.globals.set(\"metaAPIs_i\", i+1);",
+									"        postman.setNextRequest(\"Document Favourite\");",
+									"    }",
+									"",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{Authorization}}"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "operations",
+									"value": "{{docFavourite}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{writerContext}}/documents/{{document_id}}/meta",
+							"host": [
+								"{{writerContext}}"
+							],
+							"path": [
+								"documents",
+								"{{document_id}}",
+								"meta"
+							]
+						},
+						"description": "Mark a document as favourite"
+					},
+					"response": []
+				},
+				{
+					"name": "Document Final",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"var docFinal = pm.globals.get(\"docFinal\");",
+									"if(docFinal.match(\"true\")){",
+									"    pm.test(\"Mark doc As Final Test\", function () {",
+									"        pm.expect(jsonData.result).to.eql(\"success\");",
+									"        pm.expect(typeof jsonData.result).to.eql(\"string\");",
+									"        pm.expect(jsonData.message).to.eql(\"The document has been marked as final.\");",
+									"        pm.expect(typeof jsonData.message).to.eql(\"string\");",
+									"    });",
+									"}",
+									"else{",
+									"    pm.test(\"Remove Document Final Test\", function () {",
+									"    pm.expect(jsonData.result).to.eql(\"success\");",
+									"    pm.expect(typeof jsonData.result).to.eql(\"string\");",
+									"    pm.expect(jsonData.message).to.eql(\"The document is no longer marked as final.\");",
+									"    pm.expect(typeof jsonData.message).to.eql(\"string\");",
+									"});",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var prevFavInput = [\"{'mark_as_final': true}\",\"{'mark_as_final': false}\"];",
+									"",
+									"var i = parseInt(pm.globals.get(\"metaAPIs_i\"));",
+									"console.log(typeof(i));",
+									"console.log(prevFavInput[i]);",
+									"if(i < prevFavInput.length){",
+									"",
+									"    pm.globals.set(\"docFinal\",prevFavInput[i]);",
+									"    if(i === prevFavInput.length-1){",
+									"        pm.globals.set(\"metaAPIs_i\", 0);",
+									"    }",
+									"    else{",
+									"        console.log(\"Not exceeded!\");",
+									"        pm.globals.set(\"metaAPIs_i\", i+1);",
+									"        postman.setNextRequest(\"Document Final\");",
+									"    }",
+									"",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{Authorization}}"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "operations",
+									"value": "{{docFinal}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{writerContext}}/documents/{{document_id}}/meta",
+							"host": [
+								"{{writerContext}}"
+							],
+							"path": [
+								"documents",
+								"{{document_id}}",
+								"meta"
+							]
+						},
+						"description": "Mark the document as Final document"
+					},
+					"response": []
+				},
+				{
+					"name": "Lock Document",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"var docLock = pm.globals.get(\"docLock\");",
+									"if(docLock.match(\"true\")){",
+									"    pm.test(\"Document Lock Test\", function () {",
+									"        pm.expect(jsonData.result).to.eql(\"success\");",
+									"        pm.expect(typeof jsonData.result).to.eql(\"string\");",
+									"        pm.expect(jsonData.message).to.eql(\"Document lock operation has been completed successfully.\");",
+									"        pm.expect(typeof jsonData.message).to.eql(\"string\");",
+									"        var lockedBy = jsonData.locked_by;",
+									"        for(var i in lockedBy){",
+									"            pm.expect(typeof lockedBy[i]).to.eql(\"string\");",
+									"            pm.expect(lockedBy[i]).to.not.be.null;",
+									"        }",
+									"    });",
+									"}",
+									"else{",
+									"    pm.test(\"Unlock Doc Test\", function () {",
+									"    pm.expect(jsonData.result).to.eql(\"success\");",
+									"    pm.expect(typeof jsonData.result).to.eql(\"string\");",
+									"    pm.expect(jsonData.message).to.eql(\"The document has been unlocked successfully.\");",
+									"    pm.expect(typeof jsonData.message).to.eql(\"string\");",
+									"    var unlockedBy = jsonData.unlocked_by;",
+									"    for(var i in unlockedBy){",
+									"        pm.expect(typeof unlockedBy[i]).to.eql(\"string\");",
+									"        pm.expect(unlockedBy[i]).to.not.be.null;",
+									"    }",
+									"});",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var prevFavInput = [\"{'lock': true}\",\"{'lock': false}\"];",
+									"var i = parseInt(pm.globals.get(\"metaAPIs_i\"));",
+									"console.log(typeof(i));",
+									"console.log(prevFavInput[i]);",
+									"if(i < prevFavInput.length){",
+									"",
+									"     pm.globals.set(\"docLock\", prevFavInput[i]);",
+									"    if(i === prevFavInput.length-1){",
+									"        pm.globals.set(\"metaAPIs_i\", 0);",
+									"    }",
+									"    else{",
+									"        console.log(\"Not exceeded!\");",
+									"        pm.globals.set(\"metaAPIs_i\", i+1);",
+									"        postman.setNextRequest(\"Lock Document\");",
+									"    }",
+									"",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Authorization}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "operations",
+									"value": "{{docLock}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{writerContext}}/documents/{{document_id}}/meta",
+							"host": [
+								"{{writerContext}}"
+							],
+							"path": [
+								"documents",
+								"{{document_id}}",
+								"meta"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add/Update Doc Description",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Document Desc Test\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(typeof jsonData.description).to.eql(\"string\");",
+									"    pm.expect(jsonData.description).to.eql(\"API Test Description\");",
+									"    pm.expect(typeof jsonData.message).to.eql(\"string\");",
+									"    pm.expect(jsonData.message).to.eql(\"Document description has been updated successfully.\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{Authorization}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "operations",
+									"value": "{\"description\": \"API Test Description\"}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{writerContext}}/documents/{{document_id}}/meta",
+							"host": [
+								"{{writerContext}}"
+							],
+							"path": [
+								"documents",
+								"{{document_id}}",
+								"meta"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Rename Document",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Rename Doc Test\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.result).to.eql(\"success\");",
+									"    pm.expect(typeof jsonData.result).to.eql(\"string\");",
+									"    pm.expect(jsonData.message).to.eql(\"Document has been renamed successfully.\");",
+									"    pm.expect(typeof jsonData.message).to.eql(\"string\");",
+									"    pm.expect(jsonData.name).to.eql(pm.environment.get(\"DocRenameValue\"));",
+									"    pm.expect(typeof jsonData.name).to.eql(\"string\");",
+									"    var renamedBy = jsonData.modified_by;",
+									"    for(var i in renamedBy){",
+									"        pm.expect(typeof renamedBy[i]).to.eql(\"string\");",
+									"        pm.expect(renamedBy[i]).to.not.be.null;",
+									"    }",
+									"});",
+									"",
+									"pm.environment.set(\"DocRenameValue\", \"API Test Document - Rename\");",
+									"var renamedValue = pm.environment.get(\"DocRenameValue\");",
+									"var randNumber = Math.floor((Math.random()*1000)+1);",
+									"pm.environment.set(\"DocRenameValue\", renamedValue+randNumber); "
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Authorization}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "operations",
+									"value": "{\"name\": \"{{DocRenameValue}}\"}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{writerContext}}/documents/{{document_id}}/meta",
+							"host": [
+								"{{writerContext}}"
+							],
+							"path": [
+								"documents",
+								"{{document_id}}",
+								"meta"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"setTimeout(function(){}, [3000]);",
+					"",
+					"var startTime = pm.environment.get(\"testStartTime\");",
+					"console.log(\"Start time - \"+startTime);",
+					"var curTime = new Date().getTime();",
+					"/*(startTime === undefined){",
+					"     pm.globals.set(\"testStartTime\", curTime);",
+					"     startTime = pm.globals.get(\"testStartTime\");",
+					"     console.log(\"Updated Start time - \"+startTime);",
+					"}*/",
+					"",
+					"var clientID = pm.environment.get(\"Client_ID\");",
+					"var clientSecret = pm.environment.get(\"Client_Secret\");",
+					"var refreshToken = pm.environment.get(\"Refresh_Token\");",
+					"var redirectURI = pm.environment.get(\"Redirect_uri\");",
+					"var accounts = pm.environment.get(\"accountsURL\");",
+					"",
+					"var Expirytime = startTime+3600000;",
+					"",
+					"if(curTime >= Expirytime){",
+					"    console.log(\"Generating new Token\");",
+					"    pm.sendRequest({",
+					"    url: 'https://'+accounts+'/oauth/v2/token',",
+					"    method: 'POST',",
+					"    header: {",
+					"        'content-type': 'application/json'",
+					"    },",
+					"    ",
+					"    body: {",
+					"        mode: 'urlencoded',",
+					"        urlencoded: \"refresh_token=\"+refreshToken+\"&client_id=\"+clientID+\"&client_secret=\"+clientSecret+\"&redirect_uri=\"+redirectURI+\"&grant_type=refresh_token\"",
+					"    }",
+					"    }, function (err, response) {",
+					"        var json = response.json();",
+					"        console.log(\"Response\"+json);",
+					"        console.log(\"AccessToken\"+json.access_token);",
+					"        pm.environment.set(\"Authorization\", \"Zoho-oauthtoken \"+json.access_token);",
+					"        pm.environment.set(\"testStartTime\", curTime);",
+					"});",
+					"}"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"var maxNumberOfTries = 2;",
+					"var sleepBetweenTries = 5000;",
+					"",
+					"if (!pm.globals.get(\"tries\")) {",
+					"    pm.globals.set(\"tries\", 1);",
+					"}",
+					"",
+					"if ((pm.response.code !== 200) && (parseInt(pm.globals.get(\"tries\")) < maxNumberOfTries)) {",
+					"     var tries = parseInt(pm.globals.get(\"tries\"));",
+					"     pm.globals.set(\"tries\", tries + 1);",
+					"     setTimeout(function() {}, [sleepBetweenTries]);",
+					"     postman.setNextRequest(request.name);",
+					" } else {",
+					"     pm.globals.unset(\"tries\");",
+					"     pm.test(\"Status code is 200\", function () {",
+					"          pm.response.to.have.status(200);",
+					"     });",
+					"}"
+				]
+			}
+		}
+	]
+}
