@@ -1,0 +1,5589 @@
+{
+	"info": {
+		"_postman_id": "315d512d-0130-4598-816a-ab680c9b9c74",
+		"name": "Writer APIs - Single Iteration",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9079793"
+	},
+	"item": [
+		{
+			"name": "Document APIs",
+			"item": [
+				{
+					"name": "Create doc through URL",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"pm.test(\"Checking Documnet id is not null.\", function () {\r",
+									"    var docID = jsonData.document_id;\r",
+									"    pm.expect(docID).to.not.be.null;\r",
+									"    pm.expect(typeof docID).to.eql(\"string\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Checking document name\", function () {\r",
+									"    var docName = jsonData.document_name;\r",
+									"    pm.expect(docName).to.eql(\"API Testing - Create Document through URL\");\r",
+									"    pm.expect(typeof docName).to.eql(\"string\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Checking parent folder id\", function () {\r",
+									"    var parentFolderID = jsonData.parent_folder_id;\r",
+									"    pm.expect(parentFolderID).to.eql(pm.environment.get(\"wd_folder_id\"));\r",
+									"    pm.expect(typeof parentFolderID).to.eql(\"string\");\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Authorization}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "url",
+									"value": "{{doc_WebURL}}",
+									"type": "text"
+								},
+								{
+									"key": "filename",
+									"value": "API Testing - Create Document through URL",
+									"type": "text"
+								},
+								{
+									"key": "folder_id",
+									"value": "{{wd_folder_id}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{writerContext}}/documents",
+							"host": [
+								"{{writerContext}}"
+							],
+							"path": [
+								"documents"
+							]
+						},
+						"description": "Creating a document through Web URL"
+					},
+					"response": []
+				},
+				{
+					"name": "Create doc with Text",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"console.log(\"response by paddy -\"+JSON.stringify(jsonData))",
+									"pm.test(\"Checking Documnet id is not null.\", function () {",
+									"        var docID = jsonData.document_id;",
+									"        pm.expect(docID).to.not.be.null;",
+									"        pm.expect(typeof docID).to.eql(\"string\");",
+									"});",
+									"",
+									"pm.test(\"Checking document name\", function () {",
+									"    ",
+									"    var docName = jsonData.document_name;",
+									"   pm.expect(jsonData.document_name).to.eql(\"API doc -  with Text\");",
+									"    pm.expect(typeof docName).to.eql(\"string\");",
+									"});",
+									"",
+									"pm.test(\"Checking parent folder id\", function () {",
+									"    var parentFolderID = jsonData.parent_folder_id;",
+									"    pm.expect(parentFolderID).to.eql(pm.environment.get(\"wd_folder_id\"));",
+									"    pm.expect(typeof parentFolderID).to.eql(\"string\");",
+									"});",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Authorization}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "text",
+									"value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ac massa id dolor porttitor egestas sed laoreet purus. Donec non nisl volutpat, aliquet justo sed, volutpat nisi. Aliquam maximus hendrerit libero vitae consectetur. In rutrum vel ex et maximus. Cras blandit elit suscipit erat dapibus varius. Vestibulum sit amet convallis justo. Aliquam finibus sem ac massa consectetur porttitor. Fusce ullamcorper sapien tincidunt ligula aliquet, vel vulputate sapien malesuada. Nulla dui sapien, hendrerit bibendum justo ut, fermentum fringilla urna. Morbi id odio iaculis, malesuada lectus id, ullamcorper lectus. Nam feugiat, urna in sollicitudin molestie, augue risus scelerisque orci, sed maximus leo augue sed eros. Sed sed neque ut lectus lobortis ultrices. Nam imperdiet massa at ante viverra vehicula. Donec non massa dui. Aliquam hendrerit tellus non dolor fermentum, eget ornare elit faucibus.\nSuspendisse aliquet, justo ut egestas luctus, velit nisi convallis diam, ac venenatis justo ipsum sed nisi. Phasellus vestibulum enim a tellus feugiat efficitur. Ut pharetra ante purus. Aliquam sit amet odio vehicula, tempor sapien nec, vulputate mauris. Mauris dictum fringilla posuere. Fusce ut leo quis mi interdum pharetra. Nullam volutpat sapien non hendrerit eleifend.\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ac massa id dolor porttitor egestas sed laoreet purus. Donec non nisl volutpat, aliquet justo sed, volutpat nisi. Aliquam maximus hendrerit libero vitae consectetur. In rutrum vel ex et maximus. Cras blandit elit suscipit erat dapibus varius. Vestibulum sit amet convallis justo. Aliquam finibus sem ac massa consectetur porttitor. Fusce ullamcorper sapien tincidunt ligula aliquet, vel vulputate sapien malesuada. Nulla dui sapien, hendrerit bibendum justo ut, fermentum fringilla urna. Morbi id odio iaculis, malesuada lectus id, ullamcorper lectus. Nam feugiat, urna in sollicitudin molestie, augue risus scelerisque orci, sed maximus leo augue sed eros. Sed sed neque ut lectus lobortis ultrices. Nam imperdiet massa at ante viverra vehicula. Donec non massa dui. Aliquam hendrerit tellus non dolor fermentum, eget ornare elit faucibus.\nSuspendisse aliquet, justo ut egestas luctus, velit nisi convallis diam, ac venenatis justo ipsum sed nisi. Phasellus vestibulum enim a tellus feugiat efficitur. Ut pharetra ante purus. Aliquam sit amet odio vehicula, tempor sapien nec, vulputate mauris. Mauris dictum fringilla posuere. Fusce ut leo quis mi interdum pharetra. Nullam volutpat sapien non hendrerit eleifend.\n",
+									"type": "text"
+								},
+								{
+									"key": "filename",
+									"value": "API doc -  with Text",
+									"type": "text"
+								},
+								{
+									"key": "folder_id",
+									"value": "{{wd_folder_id}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{writerContext}}/documents",
+							"host": [
+								"{{writerContext}}"
+							],
+							"path": [
+								"documents"
+							]
+						},
+						"description": "Creating a document with given text"
+					},
+					"response": []
+				},
+				{
+					"name": "Create Document With Content",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"pm.test(\"Checking Documnet id is not null.\", function () {",
+									"    var docID = jsonData.document_id;",
+									"    pm.expect(docID).to.not.be.null;",
+									"    pm.expect(typeof docID).to.eql(\"string\");",
+									"});",
+									"",
+									"pm.test(\"Checking document name\", function () {",
+									"    var docName = jsonData.document_name;",
+									"    pm.expect(docName).to.eql(\"API doc - with content\");",
+									"    pm.expect(typeof docName).to.eql(\"string\");",
+									"});",
+									"",
+									"pm.test(\"Checking parent folder id\", function () {",
+									"    var parentFolderID = jsonData.parent_folder_id;",
+									"    pm.expect(parentFolderID).to.eql(pm.environment.get(\"wd_folder_id\"));",
+									"    pm.expect(typeof parentFolderID).to.eql(\"string\");",
+									"",
+									"    var doc_ID_to_del = jsonData.document_id;",
+									"    pm.environment.set(\"doc_Id_ToDel\", doc_ID_to_del);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Authorization}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "content",
+									"type": "file",
+									"src": "/E:/OfficeInegratorAPI_Files/All Features Document.html"
+								},
+								{
+									"key": "filename",
+									"value": "API doc - with content",
+									"type": "text"
+								},
+								{
+									"key": "folder_id",
+									"value": "{{wd_folder_id}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{writerContext}}/documents",
+							"host": [
+								"{{writerContext}}"
+							],
+							"path": [
+								"documents"
+							]
+						},
+						"description": "Request to create a document with content"
+					},
+					"response": []
+				},
+				{
+					"name": "Create Document With Template",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"pm.test(\"Checking Documnet id is not null.\", function () {",
+									"    var docID = jsonData.document_id;",
+									"    pm.expect(docID).to.not.be.null;",
+									"    pm.expect(typeof docID).to.eql(\"string\");",
+									"});",
+									"",
+									"pm.test(\"Checking document name\", function () {",
+									"    var docName = jsonData.document_name;",
+									"    pm.expect(docName).to.eql(\"API Testing - Create Document with Template\");",
+									"    pm.expect(typeof docName).to.eql(\"string\");",
+									"});",
+									"",
+									"pm.test(\"Checking parent folder id\", function () {",
+									"    var parentFolderID = jsonData.parent_folder_id;",
+									"    pm.expect(parentFolderID).to.eql(pm.environment.get(\"wd_folder_id\"));",
+									"    pm.expect(typeof parentFolderID).to.eql(\"string\");",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Authorization}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "template_id",
+									"value": "{{wd_template_id}}",
+									"type": "text"
+								},
+								{
+									"key": "filename",
+									"value": "API Testing - Create Document with Template",
+									"type": "text"
+								},
+								{
+									"key": "folder_id",
+									"value": "{{wd_folder_id}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{writerContext}}/documents",
+							"host": [
+								"{{writerContext}}"
+							],
+							"path": [
+								"documents"
+							]
+						},
+						"description": "Request to create a document with content"
+					},
+					"response": []
+				},
+				{
+					"name": "Download document",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var resSize = pm.response.responseSize;",
+									"",
+									"pm.test(\"Response size is to be above 1.6MB\", function () {",
+									"   pm.expect(resSize).to.be.above(1600000);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Authorization}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{writerContext}}/documents/{{document_id}}?format=docx",
+							"host": [
+								"{{writerContext}}"
+							],
+							"path": [
+								"documents",
+								"{{document_id}}"
+							],
+							"query": [
+								{
+									"key": "format",
+									"value": "docx"
+								}
+							]
+						},
+						"description": "Download the document as given format"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Doc Fields",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Authorization}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{writerContext}}/documents/{{document_id}}/fields",
+							"host": [
+								"{{writerContext}}"
+							],
+							"path": [
+								"documents",
+								"{{document_id}}",
+								"fields"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get List of docs - Owned by me",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									" var jsonData = pm.response.json();",
+									"pm.test(\"Get List of Docs - Owned by me\", function () {",
+									"    for(var i=0; i<jsonData.documents.length; i++){",
+									"        pm.expect(jsonData.documents[i].role).to.eql(\"OWNER\");",
+									"        pm.expect(typeof jsonData.documents[i].role).to.eql(\"string\");",
+									"    }",
+									"    pm.expect(jsonData.offset).to.eql(1);",
+									"    pm.expect(jsonData.limit).to.eql(10);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Authorization}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{writerContext}}/documents?limit=10&sortby=name&category=owned_by_me&offset=1&sort_order_by=ascending",
+							"host": [
+								"{{writerContext}}"
+							],
+							"path": [
+								"documents"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "sortby",
+									"value": "name"
+								},
+								{
+									"key": "category",
+									"value": "owned_by_me"
+								},
+								{
+									"key": "offset",
+									"value": "1"
+								},
+								{
+									"key": "sort_order_by",
+									"value": "ascending"
+								}
+							]
+						},
+						"description": "Getting trashed documents"
+					},
+					"response": []
+				},
+				{
+					"name": "Get List of docs - All",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									" var jsonData = pm.response.json();",
+									"pm.test(\"Get All Docs\", function () {",
+									"    for(var i=0; i<jsonData.documents.length; i++){",
+									"        pm.expect(jsonData.documents[i].role).to.eql(\"OWNER\");",
+									"        pm.expect(typeof jsonData.documents[i].role).to.eql(\"string\");",
+									"    }",
+									"    pm.expect(jsonData.offset).to.eql(3);",
+									"    pm.expect(jsonData.limit).to.eql(15);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Authorization}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{writerContext}}/documents?limit=15&sortby=modified_time&category=all&offset=3&sort_order_by=ascending",
+							"host": [
+								"{{writerContext}}"
+							],
+							"path": [
+								"documents"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "15"
+								},
+								{
+									"key": "sortby",
+									"value": "modified_time"
+								},
+								{
+									"key": "category",
+									"value": "all"
+								},
+								{
+									"key": "offset",
+									"value": "3"
+								},
+								{
+									"key": "sort_order_by",
+									"value": "ascending"
+								}
+							]
+						},
+						"description": "Getting trashed documents"
+					},
+					"response": []
+				},
+				{
+					"name": "Get List of docs - Shared to me",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									" var jsonData = pm.response.json();",
+									"pm.test(\"Get List of Docs - Shared to me\", function () {",
+									"    for(var i=0; i<jsonData.documents.length; i++){",
+									"        pm.expect(jsonData.documents[i].role).to.not.eql(\"OWNER\");",
+									"        pm.expect(typeof jsonData.documents[i].role).to.eql(\"string\");",
+									"    }",
+									"    pm.expect(jsonData.offset).to.eql(2);",
+									"    pm.expect(jsonData.limit).to.eql(5);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Authorization}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{writerContext}}/documents?limit=5&sortby=created_time&category=shared_to_me&offset=2&sort_order_by=descending",
+							"host": [
+								"{{writerContext}}"
+							],
+							"path": [
+								"documents"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "5"
+								},
+								{
+									"key": "sortby",
+									"value": "created_time"
+								},
+								{
+									"key": "category",
+									"value": "shared_to_me"
+								},
+								{
+									"key": "offset",
+									"value": "2"
+								},
+								{
+									"key": "sort_order_by",
+									"value": "descending"
+								}
+							]
+						},
+						"description": "Getting trashed documents"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Recent documents",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									" var jsonData = pm.response.json();",
+									"pm.test(\"Get Recent Documents\", function () {",
+									"    pm.expect(jsonData.offset).to.eql(2);",
+									"    pm.expect(jsonData.limit).to.eql(12);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Authorization}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{writerContext}}/documents/recent?limit=12&offset=2",
+							"host": [
+								"{{writerContext}}"
+							],
+							"path": [
+								"documents",
+								"recent"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "12"
+								},
+								{
+									"key": "offset",
+									"value": "2"
+								}
+							]
+						},
+						"description": "Getting trashed documents"
+					},
+					"response": []
+				},
+				{
+					"name": "Get trashed docs - Modified time",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									" var jsonData = pm.response.json();",
+									"pm.test(\"Sort by modified time\", function () {",
+									"    for(var i=0; i<jsonData.documents.length; i++){",
+									"        pm.expect(jsonData.documents[i].status).to.eql(\"trashed\");",
+									"        pm.expect(typeof jsonData.documents[i].status).to.eql(\"string\");",
+									"        if(i != jsonData.documents.length-1){",
+									"            pm.expect(jsonData.documents[i].modified_time_ms).to.be.above(jsonData.documents[i+1].modified_time_ms);",
+									"            pm.expect(typeof jsonData.documents[i].modified_time_ms).to.eql(\"number\");",
+									"        }",
+									"    }",
+									"});",
+									"",
+									"/*",
+									"pm.expect(jsonData.documents[1].status).to.eql(\"trashed\");",
+									"    pm.expect(typeof jsonData.documents[1].status).to.eql(\"string\");",
+									"    pm.expect(jsonData.documents[1].modified_time_ms).to.be.above(jsonData.documents[3].modified_time_ms);",
+									"    pm.expect(jsonData.documents[2].status).to.eql(\"trashed\");",
+									"    pm.expect(typeof jsonData.documents[2].status).to.eql(\"string\");",
+									"    pm.expect(jsonData.documents[2].modified_time_ms).to.be.above(jsonData.documents[4].modified_time_ms);",
+									"    pm.expect(jsonData.documents[3].status).to.eql(\"trashed\");",
+									"    pm.expect(typeof jsonData.documents[3].status).to.eql(\"string\");",
+									"    pm.expect(jsonData.documents[3].modified_time_ms).to.be.above(jsonData.documents[5].modified_time_ms);",
+									"*/"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Authorization}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{writerContext}}/documents?limit=10&sortby=modified_time&category=trashed&offset=1&sort_order_by=ascending",
+							"host": [
+								"{{writerContext}}"
+							],
+							"path": [
+								"documents"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "sortby",
+									"value": "modified_time"
+								},
+								{
+									"key": "category",
+									"value": "trashed"
+								},
+								{
+									"key": "offset",
+									"value": "1"
+								},
+								{
+									"key": "sort_order_by",
+									"value": "ascending"
+								}
+							]
+						},
+						"description": "Getting trashed documents"
+					},
+					"response": []
+				},
+				{
+					"name": "Get favourite docs - Created time",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									" var jsonData = pm.response.json();",
+									"pm.test(\"Get Favourite docs - Created time\", function () {",
+									"    for(var i=0; i<jsonData.documents.length; i++){",
+									"        pm.expect(jsonData.documents[i].is_favourite).is.true;",
+									"        if(i != jsonData.documents.length-1){",
+									"            pm.expect(jsonData.documents[i].modified_time_ms).to.be.above(jsonData.documents[i+1].modified_time_ms);",
+									"            pm.expect(typeof jsonData.documents[i].modified_time_ms).to.eql(\"number\");",
+									"        }",
+									"    }",
+									"});",
+									"",
+									"    /*",
+									"    pm.expect(jsonData.documents[1].modified_time_ms).to.be.above(jsonData.documents[3].modified_time_ms);",
+									"    pm.expect(typeof jsonData.documents[1].modified_time_ms).to.eql(\"number\");",
+									"    pm.expect(jsonData.documents[2].modified_time_ms).to.be.above(jsonData.documents[4].modified_time_ms);",
+									"    pm.expect(typeof jsonData.documents[2].modified_time_ms).to.eql(\"number\");",
+									"    pm.expect(jsonData.documents[3].modified_time_ms).to.be.above(jsonData.documents[5].modified_time_ms);",
+									"    pm.expect(typeof jsonData.documents[3].modified_time_ms).to.eql(\"number\");*/"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Authorization}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{writerContext}}/documents?limit=10&sortby=created_time&category=favourite&offset=2&sort_order_by=ascending",
+							"host": [
+								"{{writerContext}}"
+							],
+							"path": [
+								"documents"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "sortby",
+									"value": "created_time"
+								},
+								{
+									"key": "category",
+									"value": "favourite"
+								},
+								{
+									"key": "offset",
+									"value": "2"
+								},
+								{
+									"key": "sort_order_by",
+									"value": "ascending"
+								}
+							]
+						},
+						"description": "Get only favorite documents"
+					},
+					"response": []
+				},
+				{
+					"name": "Get favourite docs - Modified time",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									" var jsonData = pm.response.json();",
+									"pm.test(\"Get Favourite docs - Modified time\", function () {",
+									"    for(var i=0; i<jsonData.documents.length; i++){",
+									"        pm.expect(jsonData.documents[i].is_favourite).is.true;",
+									"        if(i != jsonData.documents.length-1){",
+									"            pm.expect(jsonData.documents[i].created_time_ms).to.be.above(jsonData.documents[i+1].created_time_ms);",
+									"            pm.expect(typeof jsonData.documents[i].created_time_ms).to.eql(\"number\");",
+									"        }",
+									"    }",
+									"});",
+									"",
+									"    /*",
+									"    pm.expect(jsonData.documents[1].modified_time_ms).to.be.above(jsonData.documents[3].modified_time_ms);",
+									"    pm.expect(typeof jsonData.documents[1].modified_time_ms).to.eql(\"number\");",
+									"    pm.expect(jsonData.documents[2].modified_time_ms).to.be.above(jsonData.documents[4].modified_time_ms);",
+									"    pm.expect(typeof jsonData.documents[2].modified_time_ms).to.eql(\"number\");",
+									"    pm.expect(jsonData.documents[3].modified_time_ms).to.be.above(jsonData.documents[5].modified_time_ms);",
+									"    pm.expect(typeof jsonData.documents[3].modified_time_ms).to.eql(\"number\");*/"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Authorization}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{writerContext}}/documents?limit=15&sortby=modified_time&category=favourite&offset=3",
+							"host": [
+								"{{writerContext}}"
+							],
+							"path": [
+								"documents"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "15"
+								},
+								{
+									"key": "sortby",
+									"value": "modified_time"
+								},
+								{
+									"key": "category",
+									"value": "favourite"
+								},
+								{
+									"key": "offset",
+									"value": "3"
+								}
+							]
+						},
+						"description": "Get only favorite documents"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Document metrics",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Doc metrics check\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.content_metrics.number_of_sentences).to.not.be.null;",
+									"    pm.expect(typeof jsonData.content_metrics.number_of_sentences).to.eql(\"number\");",
+									"    pm.expect(jsonData.content_metrics.number_of_characters).to.not.be.null;",
+									"    pm.expect(typeof jsonData.content_metrics.number_of_characters).to.eql(\"number\");",
+									"    pm.expect(jsonData.content_metrics.number_of_words).to.not.be.null;",
+									"    pm.expect(typeof jsonData.content_metrics.number_of_words).to.eql(\"number\");",
+									"    pm.expect(jsonData.content_metrics.number_of_characters_without_whitespaces).to.not.be.null;",
+									"    pm.expect(typeof jsonData.content_metrics.number_of_characters_without_whitespaces).to.eql(\"number\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Authorization}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{writerContext}}/documents/{{document_id}}/metrics",
+							"host": [
+								"{{writerContext}}"
+							],
+							"path": [
+								"documents",
+								"{{document_id}}",
+								"metrics"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Trash Document",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Trash document check\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.message).to.eql(\"Document has been trashed successfully.\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Authorization}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{writerContext}}/documents/{{doc_Id_ToDel}}/trash",
+							"host": [
+								"{{writerContext}}"
+							],
+							"path": [
+								"documents",
+								"{{doc_Id_ToDel}}",
+								"trash"
+							]
+						},
+						"description": "Trsah the given document"
+					},
+					"response": []
+				},
+				{
+					"name": "Restore document",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Restore Success\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.result).to.eql(\"success\");\r",
+									"    pm.expect(jsonData.message).to.eql(\"Document has been restored successfully.\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Authorization}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{writerContext}}/documents/{{doc_Id_ToDel}}/restore",
+							"host": [
+								"{{writerContext}}"
+							],
+							"path": [
+								"documents",
+								"{{doc_Id_ToDel}}",
+								"restore"
+							]
+						},
+						"description": "Restore the given document"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete document",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Authorization}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{writerContext}}/documents/{{doc_Id_ToDel}}/delete",
+							"host": [
+								"{{writerContext}}"
+							],
+							"path": [
+								"documents",
+								"{{doc_Id_ToDel}}",
+								"delete"
+							]
+						},
+						"description": "Delete the document permanently"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Conversion APIs",
+			"item": [
+				{
+					"name": "Convert Doc with text",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var resSize = pm.response.responseSize;",
+									"",
+									"var responseCode = pm.response.code;",
+									"var jsonData = pm.response;",
+									"console.log(jsonData);",
+									"if(responseCode === 200){",
+									"   pm.test(\"Response size not less than 16KB - odt\", function () {",
+									"        pm.expect(resSize).to.be.above(4600);",
+									"    });",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Authorization}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "format",
+									"value": "odt",
+									"type": "text"
+								},
+								{
+									"key": "text",
+									"value": "According to Gartner’s Technology Roadmap Survey, approximately 37 percent of the 452 business leaders polled said they were ‘either piloting or using artificial intelligence bots and virtual customer assistance(VCAs).”Of those respondents, 67 percent said they felt such technologies were “high-value tools.  ”",
+									"type": "text"
+								},
+								{
+									"key": "filename",
+									"value": "conversion doc with text - odt",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{writerContext}}/documents/convert",
+							"host": [
+								"{{writerContext}}"
+							],
+							"path": [
+								"documents",
+								"convert"
+							]
+						},
+						"description": "Convert the file as docx format\n\t"
+					},
+					"response": []
+				},
+				{
+					"name": "Convert Doc with file",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var resSize = pm.response.responseSize;",
+									"var responseCode = pm.response.code;",
+									"var jsonData = pm.response;",
+									"console.log(jsonData);",
+									"if(responseCode === 200){",
+									"    pm.test(\"Response size not less than 30KB - html\", function () {",
+									"    pm.expect(resSize).to.be.above(30300);",
+									"    });",
+									"}",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Authorization}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "content",
+									"type": "file",
+									"src": "API Testing doc.docx"
+								},
+								{
+									"key": "format",
+									"value": "pdf",
+									"type": "text"
+								},
+								{
+									"key": "filename",
+									"value": "conversion - pdf",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{writerContext}}/documents/convert",
+							"host": [
+								"{{writerContext}}"
+							],
+							"path": [
+								"documents",
+								"convert"
+							]
+						},
+						"description": "Convert the file as docx format\n\t"
+					},
+					"response": []
+				},
+				{
+					"name": "Convert Doc with webURL",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var resSize = pm.response.responseSize;",
+									"",
+									"",
+									"var responseCode = pm.response.code;",
+									"var jsonData = pm.response;",
+									"console.log(jsonData);",
+									"if(responseCode === 200){",
+									"    pm.test(\"Response size not less than 930KB - txt\", function () {",
+									"    pm.expect(resSize).to.be.above(9800);",
+									"    });",
+									"",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Authorization}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "url",
+									"value": "{{doc_WebURL}}",
+									"type": "text"
+								},
+								{
+									"key": "format",
+									"value": "txt",
+									"type": "text"
+								},
+								{
+									"key": "filename",
+									"value": "conversion doc with webURL - txt",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{writerContext}}/documents/convert",
+							"host": [
+								"{{writerContext}}"
+							],
+							"path": [
+								"documents",
+								"convert"
+							]
+						},
+						"description": "Convert the file as docx format\n\t"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Folder APIs",
+			"item": [
+				{
+					"name": "Get Folder Info",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Your test name\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.folder_name).to.not.be.null;",
+									"    pm.expect(typeof jsonData.folder_name).to.eql(\"string\");",
+									"    pm.expect(jsonData.parent_folder_id).to.not.be.null;",
+									"    pm.expect(typeof jsonData.folder_id).to.eql(\"string\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Authorization}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{writerContext}}/folders/{{folder_id}}",
+							"host": [
+								"{{writerContext}}"
+							],
+							"path": [
+								"folders",
+								"{{folder_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get owned_by_me Folders List",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Authorization}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{writerContext}}/folders?category=owned_by_me",
+							"host": [
+								"{{writerContext}}"
+							],
+							"path": [
+								"folders"
+							],
+							"query": [
+								{
+									"key": "category",
+									"value": "owned_by_me"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Sub-Folder",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Authorization}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "folder_name",
+									"value": "APISubFolder23",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{writerContext}}/folder/{{parentFolder}}",
+							"host": [
+								"{{writerContext}}"
+							],
+							"path": [
+								"folder",
+								"{{parentFolder}}"
+							],
+							"query": [
+								{
+									"key": "folder_name",
+									"value": "APITestingFolder",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create doc with Content in Folder",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"pm.test(\"Create document with content in Folder Test\", function () {",
+									"    pm.expect(jsonData.folder.folder_id).to.not.be.null;",
+									"    pm.expect(typeof jsonData.folder.folder_id).to.eql(\"string\");",
+									"    pm.expect(jsonData.folder.folder_name).to.not.be.null;",
+									"    pm.expect(typeof jsonData.folder.folder_name).to.eql(\"string\");",
+									"    pm.expect(jsonData.folder.parent_folder_id).to.eql(pm.environment.get(\"folder_id\"));",
+									"    pm.expect(typeof jsonData.folder.parent_folder_id).to.eql(\"string\");",
+									"",
+									"    var folder_ID_to_del = jsonData.folder.folder_id;",
+									"    pm.environment.set(\"FolderToDel\", folder_ID_to_del);    ",
+									"});",
+									"            ",
+									"    "
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var randNumber = Math.floor((Math.random()*1000)+1);",
+									"pm.globals.set(\"randomNumber\", randNumber);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Authorization}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "folder_name",
+									"value": "Folder To Create doc with content - {{randomNumber}}",
+									"type": "text"
+								},
+								{
+									"key": "filename",
+									"value": "API doc with content",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"type": "file",
+									"src": "Writer_All_Features_owner.docx"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{writerContext}}/folders/{{folder_id}}",
+							"host": [
+								"{{writerContext}}"
+							],
+							"path": [
+								"folders",
+								"{{folder_id}}"
+							]
+						},
+						"description": "Create a document in a specified folder with content"
+					},
+					"response": []
+				},
+				{
+					"name": "Create doc with Text in Folder",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									" var jsonData = pm.response.json();",
+									"pm.test(\"Folder Test\", function () {",
+									"    pm.expect(jsonData.folder.folder_id).to.not.be.null;",
+									"    pm.expect(typeof jsonData.folder.folder_id).to.eql(\"string\");",
+									"    pm.expect(jsonData.folder.folder_name).to.not.be.null;",
+									"    pm.expect(typeof jsonData.folder.folder_name).to.eql(\"string\");",
+									"    pm.expect(jsonData.folder.parent_folder_id).to.not.be.null;",
+									"    pm.expect(typeof jsonData.folder.parent_folder_id).to.eql(\"string\");",
+									"});",
+									"",
+									"pm.test(\"Document Test\", function () {",
+									"    pm.expect(jsonData.document.download_url).to.not.be.null;",
+									"    pm.expect(typeof jsonData.document.download_url).to.eql(\"string\");",
+									"    pm.expect(jsonData.document.document_id).to.not.be.null;",
+									"    pm.expect(typeof jsonData.document.document_id).to.eql(\"string\");",
+									"    pm.expect(jsonData.document.parent_folder_id).to.not.be.null;",
+									"    pm.expect(typeof jsonData.document.parent_folder_id).to.eql(\"string\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Authorization}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "folder_name",
+									"value": "Folder To Create doc with text - {{randomNumber}}",
+									"type": "text"
+								},
+								{
+									"key": "filename",
+									"value": "API doc with text",
+									"type": "text"
+								},
+								{
+									"key": "text",
+									"value": "To create document with content parameter. The document will be created along with the content that you provided in the request body.",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{writerContext}}/folders/{{folder_id}}",
+							"host": [
+								"{{writerContext}}"
+							],
+							"path": [
+								"folders",
+								"{{folder_id}}"
+							]
+						},
+						"description": "Create a document in a specified folder with content"
+					},
+					"response": []
+				},
+				{
+					"name": "Create doc with WebURL in Folder",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Folder Test\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.folder.folder_id).to.not.be.null;",
+									"    pm.expect(typeof jsonData.folder.folder_id).to.eql(\"string\");",
+									"    pm.expect(jsonData.folder.folder_name).to.not.be.null;",
+									"     pm.expect(typeof jsonData.folder.folder_name).to.eql(\"string\");",
+									"    pm.expect(jsonData.folder.parent_folder_id).to.eql(pm.environment.get(\"folder_id\"));",
+									"     pm.expect(typeof jsonData.folder.parent_folder_id).to.eql(\"string\");",
+									"});",
+									"",
+									"pm.test(\"Document Test\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.document.download_url).to.not.be.null;",
+									"     pm.expect(typeof jsonData.document.download_url).to.eql(\"string\");",
+									"    pm.expect(jsonData.document.document_id).to.not.be.null;",
+									"     pm.expect(typeof jsonData.document.document_id).to.eql(\"string\");",
+									"    pm.expect(jsonData.document.parent_folder_id).to.not.be.null;",
+									"     pm.expect(typeof jsonData.document.parent_folder_id).to.eql(\"string\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Authorization}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "folder_name",
+									"value": "Folder To Create doc with WebURL - {{randomNumber}}",
+									"type": "text"
+								},
+								{
+									"key": "filename",
+									"value": "API doc with WebURL",
+									"type": "text"
+								},
+								{
+									"key": "url",
+									"value": "{{doc_WebURL}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{writerContext}}/folders/{{folder_id}}",
+							"host": [
+								"{{writerContext}}"
+							],
+							"path": [
+								"folders",
+								"{{folder_id}}"
+							]
+						},
+						"description": "Create a document in a specified folder with content"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Folder",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"",
+									"pm.test(\"Delete Folder Test\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.result).to.eql(\"success\");",
+									"    pm.expect(typeof jsonData.result).to.eql(\"string\");",
+									"    pm.expect(jsonData.message).to.eql(\"Folder has been deleted successfully.\");",
+									"    pm.expect(typeof jsonData.message).to.eql(\"string\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Authorization}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{writerContext}}/folders/{{FolderToDel}}",
+							"host": [
+								"{{writerContext}}"
+							],
+							"path": [
+								"folders",
+								"{{FolderToDel}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Merge APIs",
+			"item": [
+				{
+					"name": "Get Merge Fields",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Get Merge Fields Test\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    for(var i=0; i<jsonData.fields.length;i++){",
+									"        console.log(jsonData.fields[i]);",
+									"        pm.expect(jsonData.fields[i]).to.not.be.null;",
+									"    }",
+									"}); "
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Authorization}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{writerContext}}/documents/{{document_id}}/mergefields",
+							"host": [
+								"{{writerContext}}"
+							],
+							"path": [
+								"documents",
+								"{{document_id}}",
+								"mergefields"
+							]
+						},
+						"description": "Get all merge fields"
+					},
+					"response": []
+				},
+				{
+					"name": "Merge & Email as Inline with JSON file_pdf form",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									" var jsonData = pm.response.json();",
+									"pm.test(\"Merge & Email as Inline Report URL\", function () {",
+									"    pm.expect(typeof jsonData.merge_report_data_url).to.eql(\"string\");",
+									"    pm.expect(jsonData.merge_report_data_url).to.not.be.null;",
+									"});",
+									"",
+									"var mergeReportURL = jsonData.merge_report_data_url;",
+									"",
+									"pm.environment.set(\"merge_report_data_url\", mergeReportURL);",
+									"",
+									"//postman.setNextRequest(\"VerifyTaskCompleted\");"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Authorization}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "subject",
+									"value": "API Merge and Mail as Attachment with JSON url",
+									"type": "text"
+								},
+								{
+									"key": "merge_data_json_content",
+									"type": "file",
+									"src": "/E:/Postman_files/files/API merge fields.json"
+								},
+								{
+									"key": "output_format",
+									"value": "pdfform",
+									"type": "text"
+								},
+								{
+									"key": "recipient_email",
+									"value": "padmanaban.g+3@zohotest.com",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{writerContext}}/documents/{{document_id}}/merge/email",
+							"host": [
+								"{{writerContext}}"
+							],
+							"path": [
+								"documents",
+								"{{document_id}}",
+								"merge",
+								"email"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Merge & Email Attachment with CSV content",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									" var jsonData = pm.response.json();",
+									"pm.test(\"Merge & Email as attachment Report URL\", function () {",
+									"    pm.expect(typeof jsonData.merge_report_data_url).to.eql(\"string\");",
+									"    pm.expect(jsonData.merge_report_data_url).to.not.be.null;",
+									"});",
+									"",
+									"var mergeReportURL = jsonData.merge_report_data_url;",
+									"",
+									"pm.environment.set(\"merge_report_data_url\", mergeReportURL);",
+									"",
+									"//postman.setNextRequest(\"VerifyTaskCompleted\");"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Authorization}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "output_format",
+									"value": "docx",
+									"type": "text"
+								},
+								{
+									"key": "subject",
+									"value": "API Merge and Mail as Attachment with CSV url",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "message",
+									"value": "API merge as Attachment with CSV url message",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "recipient_email",
+									"value": "padmanaban.g+3@zohotest.com",
+									"type": "text"
+								},
+								{
+									"key": "merge_data_csv_content",
+									"type": "file",
+									"src": "/E:/Postman_files/files/API merge records.csv"
+								},
+								{
+									"key": "attachment_name",
+									"value": "merge and attach test",
+									"type": "text"
+								},
+								{
+									"key": "common_attachments",
+									"type": "file",
+									"src": "emergency test.pdf"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{writerContext}}/documents/{{document_id}}/merge/email",
+							"host": [
+								"{{writerContext}}"
+							],
+							"path": [
+								"documents",
+								"{{document_id}}",
+								"merge",
+								"email"
+							]
+						},
+						"description": "Merge and EMail as Attachment"
+					},
+					"response": []
+				},
+				{
+					"name": "Merge & Deliver via Webhook with CSV content",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									" var jsonData = pm.response.json();",
+									"pm.test(\"Merge & Deliver Report URL\", function () {",
+									"    pm.expect(typeof jsonData.merge_report_data_url).to.eql(\"string\");",
+									"    pm.expect(jsonData.merge_report_data_url).to.not.be.null;",
+									"});",
+									"",
+									"var mergeReportURL = jsonData.merge_report_data_url;",
+									"",
+									"pm.environment.set(\"merge_report_data_url\", mergeReportURL);",
+									"",
+									"//postman.setNextRequest(\"VerifyTaskCompleted\");"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{Authorization}}"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "output_format",
+									"value": "docx",
+									"type": "text"
+								},
+								{
+									"key": "webhook",
+									"value": "{\"invoke_url\":\"https://03f6ad2229ff28f33f4e38ddfefb4895.m.pipedream.net/\", \"invoke_period\": \"oneveryrecord\"}",
+									"type": "text"
+								},
+								{
+									"key": "merge_to",
+									"value": "separatedoc",
+									"type": "text"
+								},
+								{
+									"key": "merge_data_csv_content",
+									"type": "file",
+									"src": "API merge records.csv"
+								},
+								{
+									"key": "password",
+									"value": "123",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{writerContext}}/documents/{{document_id}}/merge/webhook",
+							"host": [
+								"{{writerContext}}"
+							],
+							"path": [
+								"documents",
+								"{{document_id}}",
+								"merge",
+								"webhook"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Merge & Deliver via Webhook with JSON file_pdf form",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									" var jsonData = pm.response.json();",
+									"pm.test(\"Merge & Deliver JSON file_pdfform Report URL\", function () {",
+									"    pm.expect(typeof jsonData.merge_report_data_url).to.eql(\"string\");",
+									"    pm.expect(jsonData.merge_report_data_url).to.not.be.null;",
+									"});",
+									"",
+									"var mergeReportURL = jsonData.merge_report_data_url;",
+									"",
+									"pm.environment.set(\"merge_report_data_url\", mergeReportURL);",
+									"",
+									"//postman.setNextRequest(\"VerifyTaskCompleted\");"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{Authorization}}"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "output_format",
+									"value": "pdfform",
+									"type": "text"
+								},
+								{
+									"key": "webhook",
+									"value": "{\"invoke_url\": \"https://b681f810222363725d4d19f8531daf28.m.pipedream.net\", \"invoke_period\": \"oncomplete\"}",
+									"type": "text"
+								},
+								{
+									"key": "merge_to",
+									"value": "separatedoc",
+									"type": "text"
+								},
+								{
+									"key": "merge_data_json_content",
+									"type": "file",
+									"src": "API merge fields.json"
+								},
+								{
+									"key": "password",
+									"value": "123",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{writerContext}}/documents/{{document_id}}/merge/webhook",
+							"host": [
+								"{{writerContext}}"
+							],
+							"path": [
+								"documents",
+								"{{document_id}}",
+								"merge",
+								"webhook"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Merge & Download_CSV url",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Authorization}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "output_format",
+									"value": "docx",
+									"type": "text"
+								},
+								{
+									"key": "merge_data_json_content",
+									"type": "file",
+									"src": "API merge fields.json"
+								},
+								{
+									"key": "password",
+									"value": "123",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{writerContext}}/documents/{{document_id}}/merge/download",
+							"host": [
+								"{{writerContext}}"
+							],
+							"path": [
+								"documents",
+								"{{document_id}}",
+								"merge",
+								"download"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Merge & Store with CSV Content",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									" var jsonData = pm.response.json();\r",
+									"pm.test(\"Merge & Store CSV file_docx Report URL\", function () {\r",
+									"    pm.expect(jsonData.document_id).to.not.be.null;\r",
+									"});\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Authorization}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "output_settings",
+									"value": "{'doc_name': 'Merge&Store Doc_Test', 'folder_id':'rryem09cb9ab252d046cd8d689a30e719bc64', 'output_format':'docx', 'password':'zwriter',}",
+									"type": "text"
+								},
+								{
+									"key": "merge_data_csv_content",
+									"type": "file",
+									"src": "API merge records.csv"
+								},
+								{
+									"key": "sign_service_name",
+									"value": "zohosign",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{writerContext}}/documents/{{document_id}}/merge/store",
+							"host": [
+								"{{writerContext}}"
+							],
+							"path": [
+								"documents",
+								"{{document_id}}",
+								"merge",
+								"store"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Merge & Store with JSON Content_pdf",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									" var jsonData = pm.response.json();\r",
+									"pm.test(\"Merge & Store CSV file_pdf Report URL\", function () {\r",
+									"       pm.expect(jsonData.document_id).to.not.be.null;\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Authorization}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "output_settings",
+									"value": "{'doc_name': \"Merge&Store Doc_Test\",'folder_id':\"rryem09cb9ab252d046cd8d689a30e719bc64\", 'output_format':\"docx\", 'password':\"zwriter\"}",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "merge_data_json_content",
+									"type": "file",
+									"src": "mergeFieldsJSONFile.json"
+								},
+								{
+									"key": "output_settings",
+									"value": "{'doc_name': 'unique_test','folder_id': 'kyl360477fae1009941c9b42ed60de6fc7f27', 'output_format':'pdf'}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{writerContext}}/documents/{{document_id}}/merge/store",
+							"host": [
+								"{{writerContext}}"
+							],
+							"path": [
+								"documents",
+								"{{document_id}}",
+								"merge",
+								"store"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Merge & Sign",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									" var jsonData = pm.response.json();\r",
+									"pm.test(\"Merge & Sign Report URL\", function () {\r",
+									"    pm.expect(typeof jsonData.merge_report_url).to.eql(\"string\");\r",
+									"    pm.expect(jsonData.merge_report_url).to.include(\"/mailmerge/job\");\r",
+									"});\r",
+									"\r",
+									"var mergeReportURL = jsonData.merge_report_data_url;\r",
+									"\r",
+									"pm.environment.set(\"merge_report_data_url\", mergeReportURL);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Authorization}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "service_name",
+									"value": "zohosign",
+									"type": "text"
+								},
+								{
+									"key": "filename",
+									"value": "Bulk sign in_person_sign_offline verify~!^",
+									"type": "text"
+								},
+								{
+									"key": "signer_data",
+									"value": "[{\"recipient_1\": \"gokilesh.r@zohocorp.com\", \"action_type\": \"approve\"}, {\"recipient_2\": \"padmanaban.g@zohotest.com\", \"action_type\": \"sign\"}]",
+									"type": "text"
+								},
+								{
+									"key": "merge_data_csv_content",
+									"type": "file",
+									"src": "1.csv"
+								},
+								{
+									"key": "sign_in_order",
+									"value": "true",
+									"type": "text"
+								},
+								{
+									"key": "message",
+									"value": "API Tesing - merge and sign message",
+									"type": "text"
+								},
+								{
+									"key": "set_expire",
+									"value": "10",
+									"type": "text"
+								},
+								{
+									"key": "reminder_period",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "language",
+									"value": "en",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "common_attachments",
+									"type": "file",
+									"src": "emergency test.pdf"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{writerContext}}/documents/{{document_id}}/merge/sign",
+							"host": [
+								"{{writerContext}}"
+							],
+							"path": [
+								"documents",
+								"{{document_id}}",
+								"merge",
+								"sign"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Bulk Download API",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									" var jsonData = pm.response.json();\r",
+									"pm.test(\"Bulk download - pdf Report URL\", function () {\r",
+									"    pm.expect(typeof jsonData.merge_report_url).to.eql(\"string\");\r",
+									"    pm.expect(jsonData.merge_report_url).to.include(\"/mailmerge/job\");\r",
+									"});\r",
+									"\r",
+									"var mergeReportURL = jsonData.merge_report_data_url;\r",
+									"\r",
+									"pm.environment.set(\"merge_report_data_url\", mergeReportURL);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Authorization}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "output_settings",
+									"value": "{\"filename\":\"bulk api file_all fields\",\"format\": \"pdf\",\"password\": \"zwriter\",\"merge_to\": \"separatedoc\"}",
+									"type": "text"
+								},
+								{
+									"key": "merge_data_json_content",
+									"type": "file",
+									"src": "API merge fields.json"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{writerContext}}/templates/{{template_id}}/bulkmerge",
+							"host": [
+								"{{writerContext}}"
+							],
+							"path": [
+								"templates",
+								"{{template_id}}",
+								"bulkmerge"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Bulk Download API_pdf form",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									" var jsonData = pm.response.json();\r",
+									"pm.test(\"Bulk Download - pdf form Report URL\", function () {\r",
+									"    pm.expect(typeof jsonData.merge_report_url).to.eql(\"string\");\r",
+									"    pm.expect(jsonData.merge_report_url).to.include(\"/mailmerge/job\");\r",
+									"});\r",
+									"\r",
+									"var mergeReportURL = jsonData.merge_report_data_url;\r",
+									"\r",
+									"pm.environment.set(\"merge_report_data_url\", mergeReportURL);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Authorization}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "output_settings",
+									"value": "{\"filename\":\"bulk api file_all fields_odt\",\"format\": \"pdfform\",\"password\": \"zwriter\",\"merge_to\": \"separatedoc\"}",
+									"type": "text"
+								},
+								{
+									"key": "merge_data_json_content",
+									"type": "file",
+									"src": "API merge fields.json"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{writerContext}}/templates/{{template_id}}/bulkmerge",
+							"host": [
+								"{{writerContext}}"
+							],
+							"path": [
+								"templates",
+								"{{template_id}}",
+								"bulkmerge"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Bulk Sign_Sign",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									" var jsonData = pm.response.json();\r",
+									"pm.test(\"Bulk Sign Report URL\", function () {\r",
+									"    pm.expect(typeof jsonData.merge_report_url).to.eql(\"string\");\r",
+									"    pm.expect(jsonData.merge_report_url).to.include(\"/mailmerge/job\");\r",
+									"});\r",
+									"\r",
+									"var mergeReportURL = jsonData.merge_report_data_url;\r",
+									"\r",
+									"pm.environment.set(\"merge_report_data_url\", mergeReportURL);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Authorization}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "filename",
+									"value": "Bulk sign test-_sign - shared doc",
+									"type": "text"
+								},
+								{
+									"key": "signer_data",
+									"value": "[{\"recipient_1\":{\"type\":\"email\",\"email_id\":\"padmanaban.g@zohotest.com\"},\"action_type\" : \"sign\"}]",
+									"type": "text"
+								},
+								{
+									"key": "merge_data",
+									"value": "{'data':[{'name':'paddy4', 'email':'padmanaban.g@zohocorp.com', 'id':5103079000000512057}]}",
+									"type": "text"
+								},
+								{
+									"key": "signer_data",
+									"value": "[{\"recipient_1\":{\"type\":\"email\",\"email_id\":\"padmanaban.g+4@zohotest.com\"},\"action_type\" : \"in_person_sign\",\"in_person_signer_info\":{\"email\":\"padmanaban.g+3@zohotest.com\",\"name\":\"padddy\"},\"language\" : \"en\",\"private_notes\": \"This is a sample Private note\",\"verification_info\": {\"type\": \"email\"}}]",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{writerContext}}/templates/{{template_id}}/bulkmerge/sign",
+							"host": [
+								"{{writerContext}}"
+							],
+							"path": [
+								"templates",
+								"{{template_id}}",
+								"bulkmerge",
+								"sign"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Bulk Sign_In Person",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									" var jsonData = pm.response.json();\r",
+									"pm.test(\"Bulk Sign - in_person Report URL\", function () {\r",
+									"    pm.expect(typeof jsonData.merge_report_url).to.eql(\"string\");\r",
+									"    pm.expect(jsonData.merge_report_url).to.include(\"/mailmerge/job\");\r",
+									"});\r",
+									"\r",
+									"var mergeReportURL = jsonData.merge_report_data_url;\r",
+									"\r",
+									"pm.environment.set(\"merge_report_data_url\", mergeReportURL);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Authorization}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "filename",
+									"value": "Bulk sign in_person_sign_offline verify~!^",
+									"type": "text"
+								},
+								{
+									"key": "signer_data",
+									"value": "[{'recipient_1':{type:'email',email_id:'padmanaban.g+4@zohotest.com'},'action_type' : 'in_person_sign','in_person_signer_info':{'email':'padmanaban.g+3@zohotest.com','name':'paddy3'},'private_notes' : 'Note from bulk_sign in person method','verification_info':{'type' : 'offline','code':'222222'},'recipient_name' : 'Goki','language' : 'en'}]",
+									"type": "text"
+								},
+								{
+									"key": "merge_data",
+									"value": "{'data':[{'name':'paddy2', 'email':'padmanaban.g+2@zohotest.com'},{'name':'paddy2', 'email':'padmanaban.g+3@zohotest.com'}]}",
+									"type": "text"
+								},
+								{
+									"key": "sign_in_order",
+									"value": "true",
+									"type": "text"
+								},
+								{
+									"key": "message_plaintext",
+									"value": "Bulk Sign - message plain text",
+									"type": "text"
+								},
+								{
+									"key": "message_richtext",
+									"value": "<b>Bulk Sign - message</b><i>rich text</i>",
+									"type": "text"
+								},
+								{
+									"key": "set_expire",
+									"value": "15",
+									"type": "text"
+								},
+								{
+									"key": "reminder_period",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "language",
+									"value": "en",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "common_attachments",
+									"type": "file",
+									"src": "emergency test.pdf"
+								},
+								{
+									"key": "unique_attachments",
+									"value": "{'type':'field', 'field_id':'paddy1'}",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "merge_data_json_content",
+									"type": "file",
+									"src": "API merge fields.json"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{writerContext}}/templates/{{template_id}}/bulkmerge/sign",
+							"host": [
+								"{{writerContext}}"
+							],
+							"path": [
+								"templates",
+								"{{template_id}}",
+								"bulkmerge",
+								"sign"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Merge and Invoke",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									" var jsonData = pm.response.json();\r",
+									"pm.test(\"Merge & Invoke JSON data Report URL\", function () {\r",
+									"    pm.expect(typeof jsonData.merge_report_url).to.eql(\"string\");\r",
+									"    pm.expect(jsonData.merge_report_url).to.include(\"/mailmerge/job\");\r",
+									"});\r",
+									"\r",
+									"var mergeReportURL = jsonData.merge_report_data_url;\r",
+									"\r",
+									"pm.environment.set(\"merge_report_data_url\", mergeReportURL);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Authorization}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "output_settings",
+									"value": "{ \"password\":\"zwriter\",\"merge_to\":\"singledoc\", \"filename\":\"<<email>>\"}",
+									"type": "text"
+								},
+								{
+									"key": "merge_data",
+									"value": "{'data':[{'name':'paddy2', 'email':'padmanaban.g+2@zohotest.com'},{'name':'paddy3', 'email':'padmanaban.g+3@zohotest.com'}, {'name':'paddy4', 'email':'padmanaban.g+4@zohotest.com'}]}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{writerContext}}/documents/{{document_id}}/merge/execute",
+							"host": [
+								"{{writerContext}}"
+							],
+							"path": [
+								"documents",
+								"{{document_id}}",
+								"merge",
+								"execute"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Merge and Invoke_JSON File",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									" var jsonData = pm.response.json();\r",
+									"pm.test(\"Merge & Invoke with JSON file Report URL\", function () {\r",
+									"    pm.expect(typeof jsonData.merge_report_url).to.eql(\"string\");\r",
+									"    pm.expect(jsonData.merge_report_url).to.include(\"/mailmerge/job\");\r",
+									"});\r",
+									"\r",
+									"var mergeReportURL = jsonData.merge_report_data_url;\r",
+									"\r",
+									"pm.environment.set(\"merge_report_data_url\", mergeReportURL);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Authorization}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "output_settings",
+									"value": "{ \"password\":\"zwriter\", \"merge_to\":\"separatedoc\"}",
+									"type": "text"
+								},
+								{
+									"key": "merge_data_json_content",
+									"type": "file",
+									"src": "API merge fields.json"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{writerContext}}/documents/{{document_id}}/merge/execute",
+							"host": [
+								"{{writerContext}}"
+							],
+							"path": [
+								"documents",
+								"{{document_id}}",
+								"merge",
+								"execute"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Merge and Invoke_CSV File",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									" var jsonData = pm.response.json();\r",
+									"pm.test(\"Merge & Invoke with CSV file Report URL\", function () {\r",
+									"    pm.expect(typeof jsonData.merge_report_url).to.eql(\"string\");\r",
+									"    pm.expect(jsonData.merge_report_url).to.include(\"/mailmerge/job\");\r",
+									"});\r",
+									"\r",
+									"var mergeReportURL = jsonData.merge_report_data_url;\r",
+									"\r",
+									"pm.environment.set(\"merge_report_data_url\", mergeReportURL);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Authorization}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "output_settings",
+									"value": "{ \"password\":\"zwriter\", \"merge_to\":\"separatedoc\", \"filename\":\"<<NickName>>\"}",
+									"type": "text"
+								},
+								{
+									"key": "merge_data_csv_content",
+									"type": "file",
+									"src": "API merge records.csv"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{writerContext}}/documents/{{document_id}}/merge/execute",
+							"host": [
+								"{{writerContext}}"
+							],
+							"path": [
+								"documents",
+								"{{document_id}}",
+								"merge",
+								"execute"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Merge and Invoke_CSV URL",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									" var jsonData = pm.response.json();\r",
+									"pm.test(\"Merge & Invoke CSV url Report URL\", function () {\r",
+									"    pm.expect(typeof jsonData.merge_report_url).to.eql(\"string\");\r",
+									"    pm.expect(jsonData.merge_report_url).to.include(\"/mailmerge/job\");\r",
+									"});\r",
+									"\r",
+									"var mergeReportURL = jsonData.merge_report_data_url;\r",
+									"\r",
+									"pm.environment.set(\"merge_report_data_url\", mergeReportURL);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Authorization}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "output_settings",
+									"value": "{ \"password\":\"zwriter\", \"merge_to\":\"singledoc\", \"filename\":\"Merge and Invoke CSV URL\"}",
+									"type": "text"
+								},
+								{
+									"key": "merge_data_csv_url",
+									"value": "{{merge_data_CSV_url}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{writerContext}}/documents/{{document_id}}/merge/execute",
+							"host": [
+								"{{writerContext}}"
+							],
+							"path": [
+								"documents",
+								"{{document_id}}",
+								"merge",
+								"execute"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Merge and Invoke_JSON URL",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									" var jsonData = pm.response.json();\r",
+									"pm.test(\"Merge & Invoke JSON url Report URL\", function () {\r",
+									"    pm.expect(typeof jsonData.merge_report_url).to.eql(\"string\");\r",
+									"    pm.expect(jsonData.merge_report_url).to.include(\"/mailmerge/job\");\r",
+									"});\r",
+									"\r",
+									"var mergeReportURL = jsonData.merge_report_data_url;\r",
+									"\r",
+									"pm.environment.set(\"merge_report_data_url\", mergeReportURL);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Authorization}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "output_settings",
+									"value": "{ \"password\":\"zwriter\", \"merge_to\":\"singledoc\", \"filename\":\"<<email>>\"}",
+									"type": "text"
+								},
+								{
+									"key": "merge_data_json_url",
+									"value": "{{merge_data_JSON_url}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{writerContext}}/documents/{{document_id}}/merge/execute",
+							"host": [
+								"{{writerContext}}"
+							],
+							"path": [
+								"documents",
+								"{{document_id}}",
+								"merge",
+								"execute"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Merge Document",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									" var jsonData = pm.response.json();\r",
+									"pm.test(\"Merge & Invoke Report URL\", function () {\r",
+									"    pm.expect(jsonData.URL).to.not.be.null;\r",
+									"    pm.expect(jsonData.URL).to.include(\"merge/download\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Authorization}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "output_format",
+									"value": "pdf",
+									"type": "text"
+								},
+								{
+									"key": "merge_data_json_content",
+									"type": "file",
+									"src": "API merge fields.json"
+								},
+								{
+									"key": "password",
+									"value": "zwriter",
+									"type": "text"
+								},
+								{
+									"key": "response_type",
+									"value": "link",
+									"type": "text"
+								},
+								{
+									"key": "filename",
+									"value": "merge document",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{writerContext}}/documents/{{document_id}}/merge",
+							"host": [
+								"{{writerContext}}"
+							],
+							"path": [
+								"documents",
+								"{{document_id}}",
+								"merge"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BufferedMerge",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "redirect_uri",
+									"value": "https://writer.localzoho.com/documents",
+									"type": "string"
+								},
+								{
+									"key": "clientSecret",
+									"value": "e456902a2c9aefe2953c8d77c4bae1a024751c66fd",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "1000.0PQ2C3DNX85HFJ7LU363REMT2PBOEJ",
+									"type": "string"
+								},
+								{
+									"key": "tokenName",
+									"value": "paddy4",
+									"type": "string"
+								},
+								{
+									"key": "accessTokenUrl",
+									"value": "https://accounts.localzoho.com/oauth/v2/token",
+									"type": "string"
+								},
+								{
+									"key": "authUrl",
+									"value": "https://accounts.localzoho.com/oauth/v2/auth?access_type=offline&prompt=consent",
+									"type": "string"
+								},
+								{
+									"key": "useBrowser",
+									"value": false,
+									"type": "boolean"
+								},
+								{
+									"key": "scope",
+									"value": "ZohoWriter.documentEditor.ALL,ZohoPC.files.ALL,TeamDrive.files.ALL,TeamDrive.team.ALL,TeamDrive.workspace.ALL,ZohoWriter.merge.ALL,ZohoShow.showdocslist.All,ZohoSheet.dataAPI.ALL",
+									"type": "string"
+								},
+								{
+									"key": "tokenType",
+									"value": "Bearer",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "authorization_code",
+									"type": "string"
+								},
+								{
+									"key": "state",
+									"value": "writer",
+									"type": "string"
+								},
+								{
+									"key": "client_authentication",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "output_settings",
+									"value": "{\"password\": \"zwriter\", \"filename\": \"BufferedMerge_json_2\"}",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "merge_data",
+									"value": "{\"data\":{\"name\":\"paddy20\",\"email\":\"padmanabangopal20@gmail.com\"}}",
+									"type": "text"
+								},
+								{
+									"key": "merge_data_csv_content",
+									"type": "file",
+									"src": "1.csv",
+									"disabled": true
+								},
+								{
+									"key": "merge_data_json_content",
+									"type": "file",
+									"src": "API merge fields.json",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "https://pad.localzoho.com/writer/api/v1/documents/82y86d726a649f8a5463d9bbb5e742b8b2f32/merge/bufferedmerge",
+							"protocol": "https",
+							"host": [
+								"pad",
+								"localzoho",
+								"com"
+							],
+							"path": [
+								"writer",
+								"api",
+								"v1",
+								"documents",
+								"82y86d726a649f8a5463d9bbb5e742b8b2f32",
+								"merge",
+								"bufferedmerge"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BufferedMerge_paddy3",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "clientSecret",
+									"value": "9678406c6c469ac61c890ba5e98e2606f4a37633f8",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "1000.EAS20WL427FRBCUQWWQSZNZL1ULP5J",
+									"type": "string"
+								},
+								{
+									"key": "tokenName",
+									"value": "paddy3",
+									"type": "string"
+								},
+								{
+									"key": "redirect_uri",
+									"value": "https://writer.localzoho.com/documents",
+									"type": "string"
+								},
+								{
+									"key": "accessTokenUrl",
+									"value": "https://accounts.localzoho.com/oauth/v2/token",
+									"type": "string"
+								},
+								{
+									"key": "authUrl",
+									"value": "https://accounts.localzoho.com/oauth/v2/auth?access_type=offline&prompt=consent",
+									"type": "string"
+								},
+								{
+									"key": "useBrowser",
+									"value": false,
+									"type": "boolean"
+								},
+								{
+									"key": "scope",
+									"value": "ZohoWriter.documentEditor.ALL,ZohoPC.files.ALL,TeamDrive.files.ALL,TeamDrive.team.ALL,TeamDrive.workspace.ALL,ZohoWriter.merge.ALL,ZohoShow.showdocslist.All,ZohoSheet.dataAPI.ALL",
+									"type": "string"
+								},
+								{
+									"key": "tokenType",
+									"value": "Bearer",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "authorization_code",
+									"type": "string"
+								},
+								{
+									"key": "state",
+									"value": "writer",
+									"type": "string"
+								},
+								{
+									"key": "client_authentication",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "output_settings",
+									"value": "{\"password\": \"zwriter\", \"filename\": \"BufferedMerge_json_2\"}",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "merge_data",
+									"value": "{\"data\":{\"name\":\"paddy8\",\"email\":\"padmanabangopal@gmail.com\"}}",
+									"type": "text"
+								},
+								{
+									"key": "merge_data_csv_content",
+									"type": "file",
+									"src": "1.csv",
+									"disabled": true
+								},
+								{
+									"key": "merge_data_json_content",
+									"type": "file",
+									"src": "API merge fields.json",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "https://pad.localzoho.com/writer/api/v1/documents/f1nbj6b222d968eaa4e7bb246005dde611538/merge/bufferedmerge",
+							"protocol": "https",
+							"host": [
+								"pad",
+								"localzoho",
+								"com"
+							],
+							"path": [
+								"writer",
+								"api",
+								"v1",
+								"documents",
+								"f1nbj6b222d968eaa4e7bb246005dde611538",
+								"merge",
+								"bufferedmerge"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sign API - in_person_sms",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Sign API - in_person_sign SMS\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.status).to.eql(\"success\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Authorization}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "recipients",
+									"value": "[{\"action_type\":\"in_person_sign\", \"in_person_signer_info\":{\"email\":\"padmanaban.g+3@zohotest.com\", \"name\":\"Paddy4\"}, \"private_notes\": \"This is a sample Private note\",\"verification_info\": {\"type\": \"sms\",\"countrycode\": \"+91\",\"phonenumber\":\"7358497649\"}, \"recipient_1\": \"padmanaban.g+4@zohotest.com\", \"recipient_name\": \"paddy4\",\"language\": \"en\"}]",
+									"type": "text"
+								},
+								{
+									"key": "subject",
+									"value": "Sign API - In person - sms",
+									"type": "text"
+								},
+								{
+									"key": "message",
+									"value": "Sign API - In person - sms - Message",
+									"type": "text"
+								},
+								{
+									"key": "signed_document_name",
+									"value": "Sign API - In person - sms ",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{writerContext}}/documents/{{document_id}}/sign",
+							"host": [
+								"{{writerContext}}"
+							],
+							"path": [
+								"documents",
+								"{{document_id}}",
+								"sign"
+							],
+							"query": [
+								{
+									"key": "recipients",
+									"value": "[{\"recipient_1\":\"padmanaban.g+3@zohotest.com\", \"recipient_name\":\"paddy3\",\"action_type\":\"sign\"},{\"recipient_2\":\"padmanaban.g+2@zohotest.com\",\"recipient_name\":\"paddy2\", \"action_type\":\"approve\"}]",
+									"disabled": true
+								},
+								{
+									"key": "subject",
+									"value": "Test API Subjecy",
+									"disabled": true
+								},
+								{
+									"key": "message",
+									"value": "Test sign API Message",
+									"disabled": true
+								},
+								{
+									"key": "signed_document_name",
+									"value": "API Testing sign document",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sign API - in_person_email",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Sign API - in_person_sign Email\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.status).to.eql(\"success\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Authorization}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "recipients",
+									"value": "[{\"action_type\":\"sign\",\"recipient_1\": \"padmanaban.g+5@zohotest.com\", \"recipient_name\": \"paddy5\",\"language\": \"en\",\"private_notes\": \"This is a sample Private note\",\"verification_info\": {\"type\": \"email\"}}]",
+									"type": "text"
+								},
+								{
+									"key": "subject",
+									"value": "Sign API - In person - email - with all params",
+									"type": "text"
+								},
+								{
+									"key": "message",
+									"value": "Sign API - In person -  email - with all params",
+									"type": "text"
+								},
+								{
+									"key": "signed_document_name",
+									"value": "Sign API - In person - email - with all params",
+									"type": "text"
+								},
+								{
+									"key": "attachments",
+									"type": "file",
+									"src": "API Test Document.txt",
+									"disabled": true
+								},
+								{
+									"key": "is_sequential",
+									"value": "true",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "reminder_period",
+									"value": "2",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "expire_in",
+									"value": "10",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "language",
+									"value": "en",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{writerContext}}/documents/{{document_id}}/sign",
+							"host": [
+								"{{writerContext}}"
+							],
+							"path": [
+								"documents",
+								"{{document_id}}",
+								"sign"
+							],
+							"query": [
+								{
+									"key": "recipients",
+									"value": "[{\"recipient_1\":\"padmanaban.g+3@zohotest.com\", \"recipient_name\":\"paddy3\",\"action_type\":\"sign\"},{\"recipient_2\":\"padmanaban.g+2@zohotest.com\",\"recipient_name\":\"paddy2\", \"action_type\":\"approve\"}]",
+									"disabled": true
+								},
+								{
+									"key": "subject",
+									"value": "Test API Subjecy",
+									"disabled": true
+								},
+								{
+									"key": "message",
+									"value": "Test sign API Message",
+									"disabled": true
+								},
+								{
+									"key": "signed_document_name",
+									"value": "API Testing sign document",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sign API - in_person_offline",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Sign API - in_person_sign Offline\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.status).to.eql(\"success\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Authorization}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "recipients",
+									"value": "[{\"action_type\":\"in_person_sign\", \"in_person_signer_info\":{\"name\":\"Paddy3\"},\"private_notes\": \"This is a sample Private note\", \"verification_info\": {\"type\": \"offline\",\"code\": \"123456\"},\"recipient_1\": \"padmanaban.g+4@zohotest.com\", \"recipient_name\": \"paddy2\",\"language\": \"en\"},{\"action_type\":\"in_person_sign\", \"in_person_signer_info\":{\"email\":\"padmanaban.g+5@zohotest.com\", \"name\":\"Paddy3\"}, \"private_notes\": \"This is a sample Private note\", \"verification_info\": {\"type\": \"offline\",\"code\": \"123456\"},\"recipient_2\": \"padmanaban.g+2@zohotest.com\", \"recipient_name\": \"paddy2\",\"language\": \"en\"}]",
+									"type": "text"
+								},
+								{
+									"key": "subject",
+									"value": "Sign API - In person - without verification ",
+									"type": "text"
+								},
+								{
+									"key": "message",
+									"value": "Sign API - In person - without verification",
+									"type": "text"
+								},
+								{
+									"key": "signed_document_name",
+									"value": "Sign API - In person - without verification ",
+									"type": "text"
+								},
+								{
+									"key": "attachments",
+									"type": "file",
+									"src": "API Testing doc.docx",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{writerContext}}/documents/{{document_id}}/sign",
+							"host": [
+								"{{writerContext}}"
+							],
+							"path": [
+								"documents",
+								"{{document_id}}",
+								"sign"
+							],
+							"query": [
+								{
+									"key": "recipients",
+									"value": "[{\"recipient_1\":\"padmanaban.g+3@zohotest.com\", \"recipient_name\":\"paddy3\",\"action_type\":\"sign\"},{\"recipient_2\":\"padmanaban.g+2@zohotest.com\",\"recipient_name\":\"paddy2\", \"action_type\":\"approve\"}]",
+									"disabled": true
+								},
+								{
+									"key": "subject",
+									"value": "Test API Subjecy",
+									"disabled": true
+								},
+								{
+									"key": "message",
+									"value": "Test sign API Message",
+									"disabled": true
+								},
+								{
+									"key": "signed_document_name",
+									"value": "API Testing sign document",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sign API - Sign",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Sign API - Sign\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.status).to.eql(\"success\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Authorization}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "recipients",
+									"value": "[{\"action_type\":\"sign\",\"verification_info\": {\"type\": \"offline\", \"code\":\"987653\"},\"recipient_1\": \"padmanaban.g+4@zohotest.com\", \"recipient_name\": \"paddy5\",\"language\": \"en\"}]",
+									"type": "text"
+								},
+								{
+									"key": "subject",
+									"value": "Sign API - Sign - with verification",
+									"type": "text"
+								},
+								{
+									"key": "message",
+									"value": "Sign API - Sign - with verification",
+									"type": "text"
+								},
+								{
+									"key": "signed_document_name",
+									"value": "Sign API - Sign - with verification",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{writerContext}}/documents/{{document_id}}/sign",
+							"host": [
+								"{{writerContext}}"
+							],
+							"path": [
+								"documents",
+								"{{document_id}}",
+								"sign"
+							],
+							"query": [
+								{
+									"key": "recipients",
+									"value": "[{\"recipient_1\":\"padmanaban.g+3@zohotest.com\", \"recipient_name\":\"paddy3\",\"action_type\":\"sign\"},{\"recipient_2\":\"padmanaban.g+2@zohotest.com\",\"recipient_name\":\"paddy2\", \"action_type\":\"approve\"}]",
+									"disabled": true
+								},
+								{
+									"key": "subject",
+									"value": "Test API Subjecy",
+									"disabled": true
+								},
+								{
+									"key": "message",
+									"value": "Test sign API Message",
+									"disabled": true
+								},
+								{
+									"key": "signed_document_name",
+									"value": "API Testing sign document",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sign API -Approve",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"pm.test(\"Sign API - Approve - status success\", function () {\r",
+									"    pm.expect(typeof jsonData.status).to.eql(\"string\");\r",
+									"    pm.expect(jsonData.status).to.eql(\"success\");\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Authorization}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "recipients",
+									"value": "[{\"action_type\":\"approve\",\"recipient_1\": \"padmanaban.g+5@zohotest.com\", \"recipient_name\": \"paddy5\",\"language\": \"en\"}]",
+									"type": "text"
+								},
+								{
+									"key": "subject",
+									"value": "Sign API - Sign - email",
+									"type": "text"
+								},
+								{
+									"key": "message",
+									"value": "Sign API - Sign -  email - Message",
+									"type": "text"
+								},
+								{
+									"key": "signed_document_name",
+									"value": "Sign API - Sign - email",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{writerContext}}/documents/{{document_id}}/sign",
+							"host": [
+								"{{writerContext}}"
+							],
+							"path": [
+								"documents",
+								"{{document_id}}",
+								"sign"
+							],
+							"query": [
+								{
+									"key": "recipients",
+									"value": "[{\"recipient_1\":\"padmanaban.g+3@zohotest.com\", \"recipient_name\":\"paddy3\",\"action_type\":\"sign\"},{\"recipient_2\":\"padmanaban.g+2@zohotest.com\",\"recipient_name\":\"paddy2\", \"action_type\":\"approve\"}]",
+									"disabled": true
+								},
+								{
+									"key": "subject",
+									"value": "Test API Subjecy",
+									"disabled": true
+								},
+								{
+									"key": "message",
+									"value": "Test sign API Message",
+									"disabled": true
+								},
+								{
+									"key": "signed_document_name",
+									"value": "API Testing sign document",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Meta APIs",
+			"item": [
+				{
+					"name": "Document Favourite",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var docFfavourite = pm.globals.get(\"docFavourite\");",
+									"var jsonData = pm.response.json();",
+									"if(docFfavourite.match(\"true\")){",
+									"    pm.test(\"Make doc as favorite\", function () {",
+									"        ",
+									"        pm.expect(typeof jsonData.is_favourite).to.eql(\"boolean\");",
+									"        pm.expect(jsonData.is_favourite).to.eql(true);",
+									"        pm.expect(jsonData.message).to.eql(\"The document has been added to your favorites.\");",
+									"        pm.expect(typeof jsonData.message).to.eql(\"string\");",
+									"    });",
+									"}",
+									"else{",
+									"    pm.test(\"Remove from favorite\", function () {",
+									"    pm.expect(typeof jsonData.is_favourite).to.eql(\"boolean\");",
+									"    pm.expect(jsonData.is_favourite).to.eql(false);",
+									"    pm.expect(jsonData.message).to.eql(\"The document has been removed from your favorite list.\");",
+									"    pm.expect(typeof jsonData.message).to.eql(\"string\");",
+									"});",
+									"}",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var prevFavInput = [\"{'favourite': true}\",\"{'favourite': false}\"];",
+									"var i = parseInt(pm.globals.get(\"metaAPIs_i\"));",
+									"console.log(typeof(i));",
+									"console.log(prevFavInput[i]);",
+									"if(i < prevFavInput.length){",
+									"",
+									"    pm.globals.set(\"docFavourite\",prevFavInput[i]);",
+									"    if(i === prevFavInput.length-1){",
+									"        pm.globals.set(\"metaAPIs_i\", 0);",
+									"    }",
+									"    else{",
+									"        console.log(\"Not exceeded!\");",
+									"        pm.globals.set(\"metaAPIs_i\", i+1);",
+									"        postman.setNextRequest(\"Document Favourite\");",
+									"    }",
+									"",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{Authorization}}"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "operations",
+									"value": "{{docFavourite}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{writerContext}}/documents/{{document_id}}/meta",
+							"host": [
+								"{{writerContext}}"
+							],
+							"path": [
+								"documents",
+								"{{document_id}}",
+								"meta"
+							]
+						},
+						"description": "Mark a document as favourite"
+					},
+					"response": []
+				},
+				{
+					"name": "Document Final",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"var docFinal = pm.globals.get(\"docFinal\");",
+									"if(docFinal.match(\"true\")){",
+									"    pm.test(\"Mark doc As Final Test\", function () {",
+									"        pm.expect(jsonData.result).to.eql(\"success\");",
+									"        pm.expect(typeof jsonData.result).to.eql(\"string\");",
+									"        pm.expect(jsonData.message).to.eql(\"The document has been marked as final.\");",
+									"        pm.expect(typeof jsonData.message).to.eql(\"string\");",
+									"    });",
+									"}",
+									"else{",
+									"    pm.test(\"Remove Document Final Test\", function () {",
+									"    pm.expect(jsonData.result).to.eql(\"success\");",
+									"    pm.expect(typeof jsonData.result).to.eql(\"string\");",
+									"    pm.expect(jsonData.message).to.eql(\"The document is no longer marked as final.\");",
+									"    pm.expect(typeof jsonData.message).to.eql(\"string\");",
+									"});",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var prevFavInput = [\"{'mark_as_final': true}\",\"{'mark_as_final': false}\"];",
+									"",
+									"var i = parseInt(pm.globals.get(\"metaAPIs_i\"));",
+									"console.log(typeof(i));",
+									"console.log(prevFavInput[i]);",
+									"if(i < prevFavInput.length){",
+									"",
+									"    pm.globals.set(\"docFinal\",prevFavInput[i]);",
+									"    if(i === prevFavInput.length-1){",
+									"        pm.globals.set(\"metaAPIs_i\", 0);",
+									"    }",
+									"    else{",
+									"        console.log(\"Not exceeded!\");",
+									"        pm.globals.set(\"metaAPIs_i\", i+1);",
+									"        postman.setNextRequest(\"Document Final\");",
+									"    }",
+									"",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{Authorization}}"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "operations",
+									"value": "{{docFinal}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{writerContext}}/documents/{{document_id}}/meta",
+							"host": [
+								"{{writerContext}}"
+							],
+							"path": [
+								"documents",
+								"{{document_id}}",
+								"meta"
+							]
+						},
+						"description": "Mark the document as Final document"
+					},
+					"response": []
+				},
+				{
+					"name": "Lock Document",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"var docLock = pm.globals.get(\"docLock\");",
+									"if(docLock.match(\"true\")){",
+									"    pm.test(\"Document Lock Test\", function () {",
+									"        pm.expect(jsonData.result).to.eql(\"success\");",
+									"        pm.expect(typeof jsonData.result).to.eql(\"string\");",
+									"        pm.expect(jsonData.message).to.eql(\"Document lock operation has been completed successfully.\");",
+									"        pm.expect(typeof jsonData.message).to.eql(\"string\");",
+									"        var lockedBy = jsonData.locked_by;",
+									"        for(var i in lockedBy){",
+									"            pm.expect(typeof lockedBy[i]).to.eql(\"string\");",
+									"            pm.expect(lockedBy[i]).to.not.be.null;",
+									"        }",
+									"    });",
+									"}",
+									"else{",
+									"    pm.test(\"Unlock Doc Test\", function () {",
+									"    pm.expect(jsonData.result).to.eql(\"success\");",
+									"    pm.expect(typeof jsonData.result).to.eql(\"string\");",
+									"    pm.expect(jsonData.message).to.eql(\"The document has been unlocked successfully.\");",
+									"    pm.expect(typeof jsonData.message).to.eql(\"string\");",
+									"    var unlockedBy = jsonData.unlocked_by;",
+									"    for(var i in unlockedBy){",
+									"        pm.expect(typeof unlockedBy[i]).to.eql(\"string\");",
+									"        pm.expect(unlockedBy[i]).to.not.be.null;",
+									"    }",
+									"});",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var prevFavInput = [\"{'lock': true}\",\"{'lock': false}\"];",
+									"var i = parseInt(pm.globals.get(\"metaAPIs_i\"));",
+									"console.log(typeof(i));",
+									"console.log(prevFavInput[i]);",
+									"if(i < prevFavInput.length){",
+									"",
+									"     pm.globals.set(\"docLock\", prevFavInput[i]);",
+									"    if(i === prevFavInput.length-1){",
+									"        pm.globals.set(\"metaAPIs_i\", 0);",
+									"    }",
+									"    else{",
+									"        console.log(\"Not exceeded!\");",
+									"        pm.globals.set(\"metaAPIs_i\", i+1);",
+									"        postman.setNextRequest(\"Lock Document\");",
+									"    }",
+									"",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Authorization}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "operations",
+									"value": "{{docLock}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{writerContext}}/documents/{{document_id}}/meta",
+							"host": [
+								"{{writerContext}}"
+							],
+							"path": [
+								"documents",
+								"{{document_id}}",
+								"meta"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add/Update Doc Description",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Document Desc Test\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(typeof jsonData.description).to.eql(\"string\");",
+									"    pm.expect(jsonData.description).to.eql(\"API Test Description\");",
+									"    pm.expect(typeof jsonData.message).to.eql(\"string\");",
+									"    pm.expect(jsonData.message).to.eql(\"Document description has been updated successfully.\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{Authorization}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "operations",
+									"value": "{\"description\": \"API Test Description\"}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{writerContext}}/documents/{{document_id}}/meta",
+							"host": [
+								"{{writerContext}}"
+							],
+							"path": [
+								"documents",
+								"{{document_id}}",
+								"meta"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Rename Document",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Rename Doc Test\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.result).to.eql(\"success\");",
+									"    pm.expect(typeof jsonData.result).to.eql(\"string\");",
+									"    pm.expect(jsonData.message).to.eql(\"Document has been renamed successfully.\");",
+									"    pm.expect(typeof jsonData.message).to.eql(\"string\");",
+									"    pm.expect(jsonData.name).to.eql(pm.environment.get(\"DocRenameValue\"));",
+									"    pm.expect(typeof jsonData.name).to.eql(\"string\");",
+									"    var renamedBy = jsonData.modified_by;",
+									"    for(var i in renamedBy){",
+									"        pm.expect(typeof renamedBy[i]).to.eql(\"string\");",
+									"        pm.expect(renamedBy[i]).to.not.be.null;",
+									"    }",
+									"});",
+									"",
+									"pm.environment.set(\"DocRenameValue\", \"API Test Document - Rename\");",
+									"var renamedValue = pm.environment.get(\"DocRenameValue\");",
+									"var randNumber = Math.floor((Math.random()*1000)+1);",
+									"pm.environment.set(\"DocRenameValue\", renamedValue+randNumber); "
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Authorization}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "operations",
+									"value": "{\"name\": \"{{DocRenameValue}}\"}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{writerContext}}/documents/{{document_id}}/meta",
+							"host": [
+								"{{writerContext}}"
+							],
+							"path": [
+								"documents",
+								"{{document_id}}",
+								"meta"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Publish APIs",
+			"item": [
+				{
+					"name": "Publish document",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var publishType = pm.globals.get(\"publishDoc\");",
+									"",
+									"if(publishType.match(\"external\")){",
+									"    pm.test(\"Publish Document to Public\", function () {",
+									"        var jsonData = pm.response.json();",
+									"        pm.expect(jsonData.result).to.eql(\"success\");",
+									"        pm.expect(typeof jsonData.result).to.eql(\"string\");",
+									"        pm.expect(jsonData.scope).to.eql(\"external\");",
+									"        pm.expect(typeof jsonData.scope).to.eql(\"string\");",
+									"        pm.expect(jsonData.published_url).to.not.be.null;",
+									"        pm.expect(typeof jsonData.published_url).to.eql(\"string\");",
+									"    });",
+									"}",
+									"else{",
+									"    pm.test(\"Publish Document within Org\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(typeof jsonData.result).to.eql(\"string\");",
+									"    pm.expect(jsonData.result).to.eql(\"success\");",
+									"    pm.expect(typeof jsonData.scope).to.eql(\"string\");",
+									"    pm.expect(jsonData.scope).to.eql(\"organization\");",
+									"    pm.expect(typeof jsonData.published_url).to.eql(\"string\");",
+									"    pm.expect(jsonData.published_url).to.not.be.null;",
+									"});",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var prevFavInput =[\"external\",\"organization\"];",
+									"",
+									"var i = parseInt(pm.globals.get(\"publishAPIs_i\"));",
+									"console.log(typeof(i));",
+									"console.log(prevFavInput[i]);",
+									"if(i < prevFavInput.length){",
+									"",
+									"     pm.globals.set(\"publishDoc\", prevFavInput[i]);",
+									"    if(i === prevFavInput.length-1){",
+									"        pm.globals.set(\"publishAPIs_i\", 0);",
+									"    }",
+									"    else{",
+									"        console.log(\"Not exceeded!\");",
+									"        pm.globals.set(\"publishAPIs_i\", i+1);",
+									"        postman.setNextRequest(\"Publish document\");",
+									"    }",
+									"",
+									"}",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{Authorization}}"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "scope",
+									"value": "{{publishDoc}}",
+									"type": "text"
+								},
+								{
+									"key": "auto_republish",
+									"value": "true",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{writerContext}}/documents/{{document_id}}/publish",
+							"host": [
+								"{{writerContext}}"
+							],
+							"path": [
+								"documents",
+								"{{document_id}}",
+								"publish"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Publish document version",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var publishVersionType = pm.globals.get(\"publishDocVersion\");",
+									"",
+									"if(publishVersionType.match(\"external\")){",
+									"    pm.test(\"Publish Document version to Public\", function () {",
+									"        var jsonData = pm.response.json();",
+									"        pm.expect(typeof jsonData.result).to.eql(\"string\");",
+									"        pm.expect(jsonData.result).to.eql(\"success\");",
+									"        pm.expect(typeof jsonData.scope).to.eql(\"string\");",
+									"        pm.expect(jsonData.scope).to.eql(\"external\");",
+									"        pm.expect(typeof jsonData.auto_republish).to.eql(\"boolean\");",
+									"        pm.expect(jsonData.auto_republish).to.eql(false);",
+									"        pm.expect(typeof jsonData.published_url).to.eql(\"string\");",
+									"        pm.expect(jsonData.published_url).to.not.be.null;",
+									"    });",
+									"}",
+									"else{",
+									"    pm.test(\"Publish Document version within Org\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(typeof jsonData.result).to.eql(\"string\");",
+									"    pm.expect(jsonData.result).to.eql(\"success\");",
+									"    pm.expect(typeof jsonData.scope).to.eql(\"string\");",
+									"    pm.expect(jsonData.scope).to.eql(\"organization\");",
+									"    pm.expect(typeof jsonData.auto_republish).to.eql(\"boolean\");",
+									"    pm.expect(jsonData.auto_republish).to.eql(false);",
+									"    pm.expect(typeof jsonData.published_url).to.eql(\"string\");",
+									"    pm.expect(jsonData.published_url).to.not.be.null;",
+									"});",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var prevFavInput = [\"external\",\"organization\"];",
+									"var i = parseInt(pm.globals.get(\"publishAPIs_i\"));",
+									"console.log(typeof(i));",
+									"console.log(prevFavInput[i]);",
+									"if(i < prevFavInput.length){",
+									"",
+									"     pm.globals.set(\"publishDocVersion\", prevFavInput[i]);",
+									"    if(i === prevFavInput.length-1){",
+									"        pm.globals.set(\"publishAPIs_i\", 0);",
+									"    }",
+									"    else{",
+									"        console.log(\"Not exceeded!\");",
+									"        pm.globals.set(\"publishAPIs_i\", i+1);",
+									"        postman.setNextRequest(\"Publish document version\");",
+									"    }",
+									"",
+									"}",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{Authorization}}"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "scope",
+									"value": "{{publishDocVersion}}",
+									"type": "text"
+								},
+								{
+									"key": "auto_republish",
+									"value": "false",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{writerContext}}/documents/{{document_id}}/publish",
+							"host": [
+								"{{writerContext}}"
+							],
+							"path": [
+								"documents",
+								"{{document_id}}",
+								"publish"
+							]
+						},
+						"description": "publish only the recent version of the document."
+					},
+					"response": []
+				},
+				{
+					"name": "Post to WordPress",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"var postTypeWP = pm.globals.get(\"postType_WP\"); ",
+									"//var accountsData = jsonData.accounts[0];",
+									"if(postTypeWP.match(\"draft\")){",
+									"    pm.test(\"WordPress post data as Draft\", function () {",
+									"        pm.expect(typeof jsonData.post_type).to.eql(\"string\");",
+									"        pm.expect(jsonData.post_type).to.eql(\"draft\");",
+									"        for(var i in jsonData){",
+									"            console.log(jsonData[i]);",
+									"            pm.expect(typeof jsonData[i]).to.eql(\"string\");",
+									"            pm.expect(jsonData[i]).to.not.be.null;",
+									"        }",
+									"    });",
+									"}",
+									"else{",
+									"    pm.test(\"WordPress post data as Publish\", function () {",
+									"    pm.expect(typeof jsonData.post_type).to.eql(\"string\");",
+									"    pm.expect(jsonData.post_type).to.eql(\"publish\");",
+									"    for(var i in jsonData){",
+									"        console.log(jsonData[i]);",
+									"        pm.expect(typeof jsonData[i]).to.eql(\"string\");",
+									"        pm.expect(jsonData[i]).to.not.be.null;",
+									"    }",
+									"    }); ",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var date = new Date();",
+									"var testStartTime = date.getTime();",
+									"var scheduleTime = testStartTime+7200000;",
+									"var wordPressInput = [[\"draft\",\"Test Post as Draft\",\"\"+scheduleTime+\"\",\"#testtagsdraft\",\"inline\"],[\"publish\",\"WordPress post as Publish\",\"\"+scheduleTime+\"\",\"#testtagspublish\",\"none\"]];",
+									"",
+									"var curReqMergeParams = [\"postType_WP\",\"title_WP\",\"scheduleTime_WP\",\"tags_WP\",\"style_WP\"];",
+									"",
+									"var i = parseInt(pm.globals.get(\"publishAPIs_i\"));",
+									"console.log(i);",
+									"console.log(wordPressInput[i]);",
+									"var mergeEmailArray = wordPressInput[i];",
+									"if(i < wordPressInput.length){",
+									"    for(var j=0;j<mergeEmailArray.length;j++){",
+									"        console.log(\"Key - \"+curReqMergeParams[j]);",
+									"        console.log(\"Value - \"+mergeEmailArray[j]);",
+									"        pm.globals.set(curReqMergeParams[j], mergeEmailArray[j]);",
+									"    }",
+									"    if(i === wordPressInput.length-1){",
+									"            pm.globals.set(\"publishAPIs_i\", 0);",
+									"        }",
+									"        else{",
+									"            console.log(\"Not exceeded!\");",
+									"            pm.globals.set(\"publishAPIs_i\", i+1);",
+									"            postman.setNextRequest(\"Post to WordPress\");",
+									"        }",
+									"}",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Zoho-oauthtoken 1000.1301724f7df48ec36592867b06a528d2.6df876605d38d8dbdab95ec65005f704"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "post_type",
+									"value": "{{postType_WP}}",
+									"type": "text"
+								},
+								{
+									"key": "title",
+									"value": "{{title_WP}}",
+									"type": "text"
+								},
+								{
+									"key": "schedule_time",
+									"value": "{{scheduleTime_WP}}",
+									"type": "text"
+								},
+								{
+									"key": "tags",
+									"value": "{{tags_WP}}",
+									"type": "text"
+								},
+								{
+									"key": "style",
+									"value": "{{style_WP}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{writerContext}}/documents/{{document_id}}/apps/blog/wordpress/accounts/{{wordPress_AC_ID}}/blogs/{{wordPress_Site_ID}}",
+							"host": [
+								"{{writerContext}}"
+							],
+							"path": [
+								"documents",
+								"{{document_id}}",
+								"apps",
+								"blog",
+								"wordpress",
+								"accounts",
+								"{{wordPress_AC_ID}}",
+								"blogs",
+								"{{wordPress_Site_ID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post To Blogger",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"var postTypeWP = pm.globals.get(\"postType_WP\"); ",
+									"//var accountsData = jsonData.accounts[0];",
+									"if(postTypeWP.match(\"draft\")){",
+									"    pm.test(\"Blogger post data as Draft\", function () {",
+									"        pm.expect(typeof jsonData.post_type).to.eql(\"string\");",
+									"        pm.expect(jsonData.post_type).to.eql(\"draft\");",
+									"        for(var i in jsonData){",
+									"            console.log(jsonData[i]);",
+									"            pm.expect(typeof jsonData[i]).to.eql(\"string\");",
+									"            pm.expect(jsonData[i]).to.not.be.null;",
+									"        }",
+									"    });",
+									"}",
+									"else{",
+									"    pm.test(\"Blogger post data as Publish\", function () {",
+									"    pm.expect(typeof jsonData.post_type).to.eql(\"string\");",
+									"    pm.expect(jsonData.post_type).to.eql(\"publish\");",
+									"    for(var i in jsonData){",
+									"        console.log(jsonData[i]);",
+									"        pm.expect(typeof jsonData[i]).to.eql(\"string\");",
+									"        pm.expect(jsonData[i]).to.not.be.null;",
+									"    }",
+									"    }); ",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var date = new Date();\r",
+									"var testStartTime = date.getTime();\r",
+									"var scheduleTime = testStartTime+7200000;\r",
+									"var bloggerInput = [[\"draft\",\"Test Post as Draft\",\"\"+scheduleTime+\"\",\"#testtagsdraft\",\"inline\"],[\"publish\",\"Blogger post as Publish\",\"\"+scheduleTime+\"\",\"#testtagspublish\",\"none\"]];\r",
+									"\r",
+									"var curReqMergeParams = [\"postType_Blogger\",\"title_Blogger\",\"schedlueTime_Blogger\",\"tags_WP\",\"style_WP\"];\r",
+									"\r",
+									"var i = parseInt(pm.globals.get(\"publishAPIs_i\"));\r",
+									"console.log(i);\r",
+									"console.log(bloggerInput[i]);\r",
+									"var mergeEmailArray = bloggerInput[i];\r",
+									"if(i < bloggerInput.length){\r",
+									"    for(var j=0;j<mergeEmailArray.length;j++){\r",
+									"        console.log(\"Key - \"+curReqMergeParams[j]);\r",
+									"        console.log(\"Value - \"+mergeEmailArray[j]);\r",
+									"        pm.globals.set(curReqMergeParams[j], mergeEmailArray[j]);\r",
+									"    }\r",
+									"    if(i === bloggerInput.length-1){\r",
+									"            pm.globals.set(\"publishAPIs_i\", 0);\r",
+									"        }\r",
+									"        else{\r",
+									"            console.log(\"Not exceeded!\");\r",
+									"            pm.globals.set(\"publishAPIs_i\", i+1);\r",
+									"            postman.setNextRequest(\"Post to Blogger\");\r",
+									"        }\r",
+									"}\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Authorization}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "post_type",
+									"value": "{{postType_Blogger}}",
+									"type": "text"
+								},
+								{
+									"key": "title",
+									"value": "{{title_Blogger}}",
+									"type": "text"
+								},
+								{
+									"key": "schedule_time",
+									"value": "{{schedlueTime_Blogger}}",
+									"type": "text"
+								},
+								{
+									"key": "style",
+									"value": "{{style_WP}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{writerContext}}/documents/{{document_id}}/apps/blog/blogger/accounts/{{blogger_AC_ID}}/blogs/{{blogger_blog_id}}",
+							"host": [
+								"{{writerContext}}"
+							],
+							"path": [
+								"documents",
+								"{{document_id}}",
+								"apps",
+								"blog",
+								"blogger",
+								"accounts",
+								"{{blogger_AC_ID}}",
+								"blogs",
+								"{{blogger_blog_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UnPublish document",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Your test name\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(typeof jsonData.result).to.eql(\"string\");",
+									"    pm.expect(jsonData.result).to.eql(\"success\");",
+									"    pm.expect(typeof jsonData.message).to.eql(\"string\");",
+									"    pm.expect(jsonData.message).to.eql(\"We've successfully unpublished this document within the organization.\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Authorization}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{writerContext}}/documents/{{document_id}}/publish",
+							"host": [
+								"{{writerContext}}"
+							],
+							"path": [
+								"documents",
+								"{{document_id}}",
+								"publish"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get WordPress Account",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"var accountsData = jsonData.accounts[0];",
+									"pm.test(\"WordPress Account data\", function () {",
+									"    for(var i in accountsData){",
+									"        console.log(accountsData[i]);",
+									"        pm.expect(typeof accountsData[i]).to.eql(\"string\");",
+									"        pm.expect(accountsData[i]).to.not.be.null;",
+									"    }",
+									"}); "
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Authorization}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{writerContext}}/apps/blog/wordpress/accounts",
+							"host": [
+								"{{writerContext}}"
+							],
+							"path": [
+								"apps",
+								"blog",
+								"wordpress",
+								"accounts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Blogger Account",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"var accountsData = jsonData.accounts[0];",
+									"pm.test(\"Blogger Account data\", function () {",
+									"    for(var i in accountsData){",
+									"        console.log(accountsData[i]);",
+									"        pm.expect(typeof accountsData[i]).to.eql(\"string\");",
+									"        pm.expect(accountsData[i]).to.not.be.null;",
+									"    }",
+									"}); "
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Authorization}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{writerContext}}/apps/blog/blogger/accounts",
+							"host": [
+								"{{writerContext}}"
+							],
+							"path": [
+								"apps",
+								"blog",
+								"blogger",
+								"accounts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Bloggs List",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"var accountsData = jsonData.blogs;",
+									"pm.test(\"Blogs data\", function () {",
+									"    for(var i=0; i<accountsData.length; i++){",
+									"        console.log(accountsData[i]);",
+									"        pm.expect(typeof accountsData[i].blog_id).to.eql(\"string\");",
+									"        pm.expect(accountsData[i].blog_id).to.not.be.null;",
+									"        pm.expect(typeof accountsData[i].name).to.eql(\"string\");",
+									"        pm.expect(accountsData[i].name).to.not.be.null;",
+									"        pm.expect(typeof accountsData[i].url).to.eql(\"string\");",
+									"        pm.expect(accountsData[i].url).to.not.be.null;",
+									"    }",
+									"}); "
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Authorization}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{writerContext}}/apps/blog/blogger/accounts/{{blogger_AC_ID}}/blogs",
+							"host": [
+								"{{writerContext}}"
+							],
+							"path": [
+								"apps",
+								"blog",
+								"blogger",
+								"accounts",
+								"{{blogger_AC_ID}}",
+								"blogs"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Template APIs",
+			"item": [
+				{
+					"name": "Get Template List",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"pm.test(\"Template List\", function () {\r",
+									"    pm.expect(jsonData.total_count).not.eql(0);\r",
+									"    pm.expect(typeof jsonData.total_count).to.eql('number');\r",
+									"    pm.expect(jsonData.templates[0].status).to.eql(\"active\");\r",
+									"    pm.expect(typeof jsonData.templates[0].status).to.eql(\"string\");\r",
+									"    pm.expect(jsonData.templates[0].open_url).not.null;\r",
+									"    pm.expect(typeof jsonData.templates[0].open_url).to.eql(\"string\");\r",
+									"    pm.expect(jsonData.templates[0].type).to.eql(\"template\");\r",
+									"    pm.expect(typeof jsonData.templates[0].type).to.eql(\"string\");\r",
+									"    pm.expect(jsonData.templates[0].id).not.null;\r",
+									"    pm.expect(typeof jsonData.templates[0].id).to.eql(\"string\");\r",
+									"});\r",
+									"\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Authorization}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{writerContext}}/templates?type=personal",
+							"host": [
+								"{{writerContext}}"
+							],
+							"path": [
+								"templates"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "personal"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Template With Content",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"pm.test(\"Create Template with Content\", function () {\r",
+									"    pm.expect(jsonData.status).to.eql(\"active\");\r",
+									"    pm.expect(typeof jsonData.status).to.eql(\"string\");\r",
+									"    pm.expect(jsonData.open_url).not.null;\r",
+									"    pm.expect(typeof jsonData.open_url).to.eql(\"string\");\r",
+									"    pm.expect(jsonData.type).to.eql(\"template\");\r",
+									"    pm.expect(typeof jsonData.type).to.eql(\"string\");\r",
+									"    pm.expect(jsonData.id).not.null;\r",
+									"    pm.expect(typeof jsonData.id).to.eql(\"string\");\r",
+									"});\r",
+									"\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Authorization}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "content",
+									"type": "file",
+									"src": "Writer_All_Features_owner.docx"
+								},
+								{
+									"key": "type",
+									"value": "personal",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "API - Personal Template",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "writer",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{writerContext}}/templates",
+							"host": [
+								"{{writerContext}}"
+							],
+							"path": [
+								"templates"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Template with Text",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"pm.test(\"Create Template with Text\", function () {\r",
+									"    pm.expect(jsonData.status).to.eql(\"active\");\r",
+									"    pm.expect(typeof jsonData.status).to.eql(\"string\");\r",
+									"    pm.expect(jsonData.open_url).not.null;\r",
+									"    pm.expect(typeof jsonData.open_url).to.eql(\"string\");\r",
+									"    pm.expect(jsonData.type).to.eql(\"template\");\r",
+									"    pm.expect(typeof jsonData.type).to.eql(\"string\");\r",
+									"    pm.expect(jsonData.id).not.null;\r",
+									"    pm.expect(typeof jsonData.id).to.eql(\"string\");\r",
+									"});\r",
+									"\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Authorization}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "text",
+									"value": "New Template creation with text testing througn API",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "Template with text",
+									"type": "text"
+								},
+								{
+									"key": "type",
+									"value": "personal",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{writerContext}}/templates",
+							"host": [
+								"{{writerContext}}"
+							],
+							"path": [
+								"templates"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Template Through Web URL",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"pm.test(\"Create Template through URL\", function () {\r",
+									"    pm.expect(jsonData.status).to.eql(\"active\");\r",
+									"    pm.expect(typeof jsonData.status).to.eql(\"string\");\r",
+									"    pm.expect(jsonData.open_url).not.null;\r",
+									"    pm.expect(typeof jsonData.open_url).to.eql(\"string\");\r",
+									"    pm.expect(jsonData.type).to.eql(\"template\");\r",
+									"    pm.expect(typeof jsonData.type).to.eql(\"string\");\r",
+									"    pm.expect(jsonData.id).not.null;\r",
+									"    pm.expect(typeof jsonData.id).to.eql(\"string\");\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Authorization}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "url",
+									"value": "{{doc_WebURL}}",
+									"type": "text"
+								},
+								{
+									"key": "type",
+									"value": "personal",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "Template through Web URL",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "writer",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{writerContext}}/templates",
+							"host": [
+								"{{writerContext}}"
+							],
+							"path": [
+								"templates"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Template Details",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"pm.test(\"Template Details\", function () {\r",
+									"    pm.expect(jsonData.status).to.eql(\"active\");\r",
+									"    pm.expect(typeof jsonData.status).to.eql(\"string\");\r",
+									"    pm.expect(jsonData.open_url).not.null;\r",
+									"    pm.expect(typeof jsonData.open_url).to.eql(\"string\");\r",
+									"    pm.expect(jsonData.type).to.eql(\"template\");\r",
+									"    pm.expect(typeof jsonData.type).to.eql(\"string\");\r",
+									"    pm.expect(jsonData.id).not.null;\r",
+									"    pm.expect(typeof jsonData.id).to.eql(\"string\");\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Authorization}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{writerContext}}/templates/{{template_id}}",
+							"host": [
+								"{{writerContext}}"
+							],
+							"path": [
+								"templates",
+								"{{template_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Copy Template",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"pm.test(\"Create Template through URL\", function () {\r",
+									"    pm.expect(jsonData.status).to.eql(\"active\");\r",
+									"    pm.expect(typeof jsonData.status).to.eql(\"string\");\r",
+									"    pm.expect(jsonData.open_url).not.null;\r",
+									"    pm.expect(typeof jsonData.open_url).to.eql(\"string\");\r",
+									"    pm.expect(jsonData.type).to.eql(\"template\");\r",
+									"    pm.expect(typeof jsonData.type).to.eql(\"string\");\r",
+									"    pm.expect(jsonData.id).not.null;\r",
+									"    pm.expect(typeof jsonData.id).to.eql(\"string\");\r",
+									"    pm.expect(jsonData.name).to.eql(\"Copy Template\");\r",
+									"    pm.expect(typeof jsonData.name).to.eql(\"string\");\r",
+									"    var temp_ID = jsonData.id;\r",
+									"    pm.environment.set(\"del_temp_id\",temp_ID);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Authorization}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "type",
+									"value": "personal",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "Copy Template",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{writerContext}}/templates/{{template_id}}/copy",
+							"host": [
+								"{{writerContext}}"
+							],
+							"path": [
+								"templates",
+								"{{template_id}}",
+								"copy"
+							],
+							"query": [
+								{
+									"key": "template_id",
+									"value": "{{template_id}}",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Template",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Template Delete test\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.message).to.eql(\"Template has been deleted successfully.\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Authorization}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{writerContext}}/templates/{{del_temp_id}}/delete",
+							"host": [
+								"{{writerContext}}"
+							],
+							"path": [
+								"templates",
+								"{{del_temp_id}}",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Automation APIs",
+			"item": [
+				{
+					"name": "Get Merge Templates",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "clientSecret",
+									"value": "9678406c6c469ac61c890ba5e98e2606f4a37633f8",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "1000.EAS20WL427FRBCUQWWQSZNZL1ULP5J",
+									"type": "string"
+								},
+								{
+									"key": "tokenName",
+									"value": "paddy3",
+									"type": "string"
+								},
+								{
+									"key": "redirect_uri",
+									"value": "https://writer.localzoho.com/documents",
+									"type": "string"
+								},
+								{
+									"key": "accessTokenUrl",
+									"value": "https://accounts.localzoho.com/oauth/v2/token",
+									"type": "string"
+								},
+								{
+									"key": "authUrl",
+									"value": "https://accounts.localzoho.com/oauth/v2/auth?access_type=offline&prompt=consent",
+									"type": "string"
+								},
+								{
+									"key": "useBrowser",
+									"value": false,
+									"type": "boolean"
+								},
+								{
+									"key": "scope",
+									"value": "ZohoWriter.documentEditor.ALL,ZohoPC.files.ALL,TeamDrive.files.ALL,TeamDrive.team.ALL,TeamDrive.workspace.ALL,ZohoWriter.merge.ALL,ZohoShow.showdocslist.All,ZohoSheet.dataAPI.ALL",
+									"type": "string"
+								},
+								{
+									"key": "tokenType",
+									"value": "Bearer",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "authorization_code",
+									"type": "string"
+								},
+								{
+									"key": "state",
+									"value": "writer",
+									"type": "string"
+								},
+								{
+									"key": "client_authentication",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+								"key": "Authorization",
+								"value": "Zoho-oauthtoken 1000.9587456f4309fd952447255b83783792.f694d5bfef2daa3893d0dbf3126610be",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{writerContext}}/documents?resource_type=merge&offset=2&limit=10&sortby=created_time&sort_order_by=ascending&category=all&team_id=la6u152db3ef7548345dd848589c7f256305b",
+							"host": [
+								"{{writerContext}}"
+							],
+							"path": [
+								"documents"
+							],
+							"query": [
+								{
+									"key": "resource_type",
+									"value": "merge"
+								},
+								{
+									"key": "offset",
+									"value": "2"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "sortby",
+									"value": "created_time"
+								},
+								{
+									"key": "sort_order_by",
+									"value": "ascending"
+								},
+								{
+									"key": "category",
+									"value": "all"
+								},
+								{
+									"key": "team_id",
+									"value": "la6u152db3ef7548345dd848589c7f256305b"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Fillable Templates",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+								"key": "Authorization",
+								"value": "Zoho-oauthtoken 1000.9587456f4309fd952447255b83783792.f694d5bfef2daa3893d0dbf3126610be",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{writerContext}}/documents?resource_type=fillable&offset=5&limit=15&sortby=modified_time&sort_order_by=descending&category=shared_to_me",
+							"host": [
+								"{{writerContext}}"
+							],
+							"path": [
+								"documents"
+							],
+							"query": [
+								{
+									"key": "resource_type",
+									"value": "fillable"
+								},
+								{
+									"key": "offset",
+									"value": "5"
+								},
+								{
+									"key": "limit",
+									"value": "15"
+								},
+								{
+									"key": "sortby",
+									"value": "modified_time"
+								},
+								{
+									"key": "sort_order_by",
+									"value": "descending"
+								},
+								{
+									"key": "category",
+									"value": "shared_to_me"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Sign Templates",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+								"key": "Authorization",
+								"value": "Zoho-oauthtoken 1000.9587456f4309fd952447255b83783792.f694d5bfef2daa3893d0dbf3126610be",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{writerContext}}/documents?resource_type=sign&offset=8&limit=20&sortby=name&sort_order_by=ascending&category=owned_by_me",
+							"host": [
+								"{{writerContext}}"
+							],
+							"path": [
+								"documents"
+							],
+							"query": [
+								{
+									"key": "resource_type",
+									"value": "sign"
+								},
+								{
+									"key": "offset",
+									"value": "8"
+								},
+								{
+									"key": "limit",
+									"value": "20"
+								},
+								{
+									"key": "sortby",
+									"value": "name"
+								},
+								{
+									"key": "sort_order_by",
+									"value": "ascending"
+								},
+								{
+									"key": "category",
+									"value": "owned_by_me"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"setTimeout(function(){}, [3000]);",
+					"",
+					"var startTime = pm.environment.get(\"testStartTime\");",
+					"console.log(\"Start time - \"+startTime);",
+					"var curTime = new Date().getTime();",
+					"/*(startTime === undefined){",
+					"     pm.globals.set(\"testStartTime\", curTime);",
+					"     startTime = pm.globals.get(\"testStartTime\");",
+					"     console.log(\"Updated Start time - \"+startTime);",
+					"}*/",
+					"",
+					"var clientID = pm.environment.get(\"Client_ID\");",
+					"var clientSecret = pm.environment.get(\"Client_Secret\");",
+					"var refreshToken = pm.environment.get(\"Refresh_Token\");",
+					"var redirectURI = pm.environment.get(\"Redirect_uri\");",
+					"var accounts = pm.environment.get(\"accountsURL\");",
+					"",
+					"var Expirytime = startTime+3600000;",
+					"",
+					"if(curTime >= Expirytime){",
+					"    console.log(\"Generating new Token\");",
+					"    pm.sendRequest({",
+					"    url: 'https://'+accounts+'/oauth/v2/token',",
+					"    method: 'POST',",
+					"    header: {",
+					"        'content-type': 'application/json'",
+					"    },",
+					"    ",
+					"    body: {",
+					"        mode: 'urlencoded',",
+					"        urlencoded: \"refresh_token=\"+refreshToken+\"&client_id=\"+clientID+\"&client_secret=\"+clientSecret+\"&redirect_uri=\"+redirectURI+\"&grant_type=refresh_token\"",
+					"    }",
+					"    }, function (err, response) {",
+					"        var json = response.json();",
+					"        console.log(\"Response\"+json);",
+					"        console.log(\"AccessToken\"+json.access_token);",
+					"        pm.environment.set(\"Authorization\", \"Zoho-oauthtoken \"+json.access_token);",
+					"        pm.environment.set(\"testStartTime\", curTime);",
+					"});",
+					"}"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"var maxNumberOfTries = 2;",
+					"var sleepBetweenTries = 5000;",
+					"",
+					"if (!pm.globals.get(\"tries\")) {",
+					"    pm.globals.set(\"tries\", 1);",
+					"}",
+					"",
+					"if ((pm.response.code !== 200) && (parseInt(pm.globals.get(\"tries\")) < maxNumberOfTries)) {",
+					"     var tries = parseInt(pm.globals.get(\"tries\"));",
+					"     pm.globals.set(\"tries\", tries + 1);",
+					"     setTimeout(function() {}, [sleepBetweenTries]);",
+					"     postman.setNextRequest(request.name);",
+					" } else {",
+					"     pm.globals.unset(\"tries\");",
+					"     pm.test(\"Status code is 200\", function () {",
+					"          pm.response.to.have.status(200);",
+					"     });",
+					"}"
+				]
+			}
+		}
+	]
+}
